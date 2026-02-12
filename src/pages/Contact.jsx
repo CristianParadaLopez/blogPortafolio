@@ -9,7 +9,7 @@ const Contact = () => {
       id: "cristian",
       name: "Cristian",
       email: "paradalopezcristianalexander@gmail.com",
-      image: "/authors/user.png"
+      image: "/authors/cristian/cristian.jpg"
     },
     {
       id: "ana",

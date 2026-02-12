@@ -95,15 +95,6 @@ const Header = () => {
 
       </nav>
 
-      {/* BOTÓN ESCRIBIR */}
-      <Link 
-        to="/contacto"
-        onClick={closeAll}
-        className="hidden md:block bg-[#DE3642] text-white py-2 px-6 rounded-full hover:opacity-80 transition"
-      >
-        Escribir
-      </Link>
-
       {/* MOBILE BUTTON */}
       <button 
         onClick={() => setMobileOpen(!mobileOpen)} 

@@ -1,54 +1,73 @@
-import { useParams } from "react-router-dom";
-import posts from "./posts";
-import PostCard from "../components/PostCard";
-import Footer from "../components/Footer";
+const authors = [
+  {
+    slug: "cristian",
+    name: "Cristian Parada",
+    role: "Full Stack Developer",
+    image: "/authors/cristian.png",
+    about:
+      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
 
-const Author = () => {
-  const { authorSlug } = useParams();
+    contact: {
+      phone: "6430-4967",
+      email: "cristianparadalopez@gmail.com",
+      github: "https://github.com/CristianParadaLopez"
+    },
 
-  const authorPosts = posts.filter(
-    (post) => post.authorSlug === authorSlug
-  );
+    skills: {
+      web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
+      mobile: ["Flutter", "Dart", "Kotlin"],
+      frameworks: ["Laravel", "Django"]
+    },
 
-  if (authorPosts.length === 0) {
-    return (
-      <section className="min-h-screen flex items-center justify-center">
-        <h2 className="text-2xl">Autor no encontrado</h2>
-      </section>
-    );
+    projects: [
+      {
+        title: "Sistema Web Escolar",
+        image: "/projects/proyecto1.png",
+        link: "#"
+      },
+      {
+        title: "App Gestión de Tareas",
+        image: "/projects/proyecto2.png",
+        link: "#"
+      }
+    ]
+  },
+  {
+    slug: "ana",
+    name: "Ana",
+    role: "Frontend Developer",
+    bio: "Especialista en UI/UX y diseño moderno con Tailwind.",
+    image: "/authors/ana.png",
+    portfolio: "https://ana.com",
+    github: "https://github.com/ana"
+  },
+  {
+    slug: "luis",
+    name: "Luis",
+    role: "Backend Developer",
+    bio: "Experto en bases de datos y arquitectura escalable.",
+    image: "/authors/luis.png",
+    portfolio: "https://luis.com",
+    github: "https://github.com/luis"
+  },
+  {
+    slug: "maria",
+    name: "Maria",
+    role: "Mobile Developer",
+    bio: "Construyendo apps móviles modernas y eficientes.",
+    image: "/authors/maria.png",
+    portfolio: "https://maria.com",
+    github: "https://github.com/maria"
+  },
+  {
+    slug: "diego",
+    name: "Diego",
+    role: "AI Engineer",
+    bio: "Trabajando con Machine Learning e Inteligencia Artificial.",
+    image: "/authors/diego.png",
+    portfolio: "https://diego.com",
+    github: "https://github.com/diego"
   }
+];
 
-  const authorName = authorPosts[0].author;
-
-  return (
-    <>
-      <section className="max-w-7xl mx-auto px-6 lg:px-20 py-24 min-h-screen">
-
-        <div className="mb-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {authorName}
-          </h1>
-
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Desarrollador apasionado por la tecnología, el diseño moderno y la Inteligencia Artificial.
-          </p>
-        </div>
-
-        <h2 className="text-2xl font-semibold mb-10">
-          Artículos publicados
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {authorPosts.map((post) => (
-            <PostCard key={post.id} {...post} />
-          ))}
-        </div>
-
-      </section>
-
-      <Footer />
-    </>
-  );
-};
-
-export default Author;
+export default authors;

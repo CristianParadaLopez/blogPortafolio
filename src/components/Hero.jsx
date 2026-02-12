@@ -16,8 +16,7 @@ const Hero = () => {
         lg:right-0 
         lg:top-0
       ">
-        <Spline
-          scene="https://prod.spline.design/I32lPxOxVLUBBrqn/scene.splinecode"
+        <Spline scene="https://prod.spline.design/I32lPxOxVLUBBrqn/scene.splinecode"
           className="w-full h-full"
         />
       </div>
