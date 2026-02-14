@@ -33,40 +33,136 @@ const authors = [
     ]
   },
   {
-    slug: "ana",
-    name: "Ana",
+    slug: "eunice",
+    name: "Eunice Martínez",
+    role: "Backend Developer",
+    image: "/authors/eunice.png",
+    about:
+      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
+
+    contact: {
+      phone: "6430-4967",
+      email: "cristianparadalopez@gmail.com",
+      github: "https://github.com/CristianParadaLopez"
+    },
+
+    skills: {
+      web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
+      mobile: ["Flutter", "Dart", "Kotlin"],
+      frameworks: ["Laravel", "Django"]
+    },
+
+    projects: [
+      {
+        title: "Sistema Web Escolar",
+        image: "/projects/proyecto1.png",
+        link: "#"
+      },
+      {
+        title: "App Gestión de Tareas",
+        image: "/projects/proyecto2.png",
+        link: "#"
+      }
+    ]
+  },
+  {
+    slug: "tania",
+    name: "Tania Martínez",
     role: "Frontend Developer",
-    bio: "Especialista en UI/UX y diseño moderno con Tailwind.",
-    image: "/authors/ana.png",
-    portfolio: "https://ana.com",
-    github: "https://github.com/ana"
+    image: "/authors/tania.png",
+    about:
+      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
+
+    contact: {
+      phone: "6430-4967",
+      email: "cristianparadalopez@gmail.com",
+      github: "https://github.com/CristianParadaLopez"
+    },
+
+    skills: {
+      web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
+      mobile: ["Flutter", "Dart", "Kotlin"],
+      frameworks: ["Laravel", "Django"]
+    },
+
+    projects: [
+      {
+        title: "Sistema Web Escolar",
+        image: "/projects/proyecto1.png",
+        link: "#"
+      },
+      {
+        title: "App Gestión de Tareas",
+        image: "/projects/proyecto2.png",
+        link: "#"
+      }
+    ]
+  },
+  {
+    slug: "katherine",
+    name: "Katherine Martínez",
+    role: "Backend Developer",
+    image: "/authors/katherine.png",
+    about:
+      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
+
+    contact: {
+      phone: "6430-4967",
+      email: "cristianparadalopez@gmail.com",
+      github: "https://github.com/CristianParadaLopez"
+    },
+
+    skills: {
+      web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
+      mobile: ["Flutter", "Dart", "Kotlin"],
+      frameworks: ["Laravel", "Django"]
+    },
+
+    projects: [
+      {
+        title: "Sistema Web Escolar",
+        image: "/projects/proyecto1.png",
+        link: "#"
+      },
+      {
+        title: "App Gestión de Tareas",
+        image: "/projects/proyecto2.png",
+        link: "#"
+      }
+    ]
   },
   {
     slug: "luis",
     name: "Luis",
-    role: "Backend Developer",
-    bio: "Experto en bases de datos y arquitectura escalable.",
+    role: "Full Stack Developer",
     image: "/authors/luis.png",
-    portfolio: "https://luis.com",
-    github: "https://github.com/luis"
-  },
-  {
-    slug: "maria",
-    name: "Maria",
-    role: "Mobile Developer",
-    bio: "Construyendo apps móviles modernas y eficientes.",
-    image: "/authors/maria.png",
-    portfolio: "https://maria.com",
-    github: "https://github.com/maria"
-  },
-  {
-    slug: "diego",
-    name: "Diego",
-    role: "AI Engineer",
-    bio: "Trabajando con Machine Learning e Inteligencia Artificial.",
-    image: "/authors/diego.png",
-    portfolio: "https://diego.com",
-    github: "https://github.com/diego"
+    about:
+      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
+
+    contact: {
+      phone: "6430-4967",
+      email: "cristianparadalopez@gmail.com",
+      github: "https://github.com/CristianParadaLopez"
+    },
+
+    skills: {
+      web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
+      mobile: ["Flutter", "Dart", "Kotlin"],
+      frameworks: ["Laravel", "Django"]
+    },
+
+    projects: [
+      {
+        title: "Sistema Web Escolar",
+        image: "/projects/proyecto1.png",
+        link: "#"
+      },
+      {
+        title: "App Gestión de Tareas",
+        image: "/projects/proyecto2.png",
+        link: "#"
+      }
+    ]
   }
 ];
 
