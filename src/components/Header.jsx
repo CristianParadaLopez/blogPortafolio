@@ -31,15 +31,15 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center py-4 px-4 lg:px-20 relative z-50 bg-black">
+    <header className="flex justify-between items-center py-4 px-4 lg:px-20 relative z-50 bg-black border-b-4 border-[#DE3642]">
 
       {/* LOGO */}
       <Link 
         to="/" 
         onClick={closeAll}
-        className="text-3xl md:text-4xl font-light"
+        className="text-3xl md:text-4xl font-light hover:text-[#DE3642] transition-colors"
       >
-        BLOG GRUPO PERÚ
+        BLOG/PORTAFOLIO CON REACT
       </Link>
 
       {/* DESKTOP NAV */}
@@ -66,7 +66,7 @@ const Header = () => {
           {dropdownOpen && (
             <div className="absolute top-10 left-0 bg-[#111] border border-[#222] shadow-xl rounded-xl p-4 flex flex-col gap-3 min-w-[160px]">
 
-              {["cristian", "ana", "luis", "maria", "diego"].map((author) => (
+              {["tania", "luis","katherine", "eunice", "cristian",].map((author) => (
                 <Link
                   key={author}
                   to={`/autor/${author}`}
@@ -84,11 +84,6 @@ const Header = () => {
         <Link to="/categorias/react" onClick={closeAll} className="hover:text-[#DE3642] transition-colors">
           Categorías
         </Link>
-
-        <Link to="/about" onClick={closeAll} className="hover:text-[#DE3642] transition-colors">
-          Acerca de
-        </Link>
-
         <Link to="/contacto" onClick={closeAll} className="hover:text-[#DE3642] transition-colors">
           Contacto
         </Link>

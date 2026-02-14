@@ -39,12 +39,12 @@ const Hero = () => {
         </h1>
 
         <p className='text-base sm:text-lg tracking-wider text-gray-400 max-w-[30rem]'>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi reprehenderit quidem velit quae dolorem nisi accusantium, a laudantium explicabo hic consequuntur aut aperiam, labore tenetur. Adipisci nulla provident accusantium debitis.
+          Bienvenidos a nuestro blog/portafolio, un espacio donde compartimos conocimientos, experiencias y proyectos relacionados con el desarrollo web y la tecnología. Aquí encontrarás artículos, tutoriales y recursos para inspirarte y ayudarte en tu camino como desarrollador.
         </p>
 
         <div className='flex gap-4 mt-12'>
           <a href="#" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#DE3642]'>
-            Documentacion
+            Repositorio del blog <i className='bx bxl-github '></i>
           </a>
 
           <a href="#" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full bg-gray-300 text-black hover:bg-[#1a1a1a] hover:text-[#DE3642]'>

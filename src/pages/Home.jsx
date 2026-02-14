@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Hero />
 
-      <section className="max-w-7xl mx-auto px-6 lg:px-20 py-24">
+      <section className="max-w-7xl mx-auto px-6 lg:px-20 py-24 border-t border-[#1f1f1f]">
         <h2 className="text-3xl md:text-4xl font-semibold mb-16 text-center">
           Últimos Artículos
         </h2>

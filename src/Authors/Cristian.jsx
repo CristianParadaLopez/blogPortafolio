@@ -145,6 +145,11 @@ const frameworks = [
       >
         <i className='bx bxl-github'></i>
       </a>
+      <a href="https://sv.linkedin.com/in/cristian-alexander-parada-l%C3%B3pez-40a504371" 
+      className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
+      title="Visitar mi Linkedin">
+              <i className='bx bxl-linkedin'></i>
+            </a>
     </div>
   </div>
 
