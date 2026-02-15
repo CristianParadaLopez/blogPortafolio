@@ -43,12 +43,8 @@ const Hero = () => {
         </p>
 
         <div className='flex gap-4 mt-12'>
-          <a href="#" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#DE3642]'>
+          <a href="https://github.com/CristianParadaLopez/blogPortafolio" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#DE3642]'>
             Repositorio del blog <i className='bx bxl-github '></i>
-          </a>
-
-          <a href="#" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full bg-gray-300 text-black hover:bg-[#1a1a1a] hover:text-[#DE3642]'>
-            Get Started
           </a>
         </div>
       </div>

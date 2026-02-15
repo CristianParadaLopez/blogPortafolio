@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Logo + descripción */}
         <div>
           <h2 className="text-2xl font-semibold text-white mb-4">
-            BLOG GRUPO PERU
+            BLOG PORTAFOLIO
           </h2>
           <p className="text-sm leading-relaxed">
             Plataforma digital profesional que combina blog temático 
@@ -24,7 +24,7 @@ const Footer = () => {
           </h3>
           <ul className="space-y-3 text-sm">
             <li><a href="/" className="hover:text-[#DE3642] transition-colors">Inicio</a></li>
-            <li><a href="/categorias" className="hover:text-[#DE3642] transition-colors">Categorías</a></li>
+            <li><a href="/categorias/Inteligencia Artificial" className="hover:text-[#DE3642] transition-colors">Categorías</a></li>
             <li><a href="/contacto" className="hover:text-[#DE3642] transition-colors">Contacto</a></li>
           </ul>
         </div>
@@ -35,7 +35,7 @@ const Footer = () => {
             Síguenos
           </h3>
           <div className="flex gap-4 text-2xl">
-            <a href="#" className="hover:text-[#DE3642] transition-colors">
+            <a href="https://github.com/CristianParadaLopez/blogPortafolio" className="hover:text-[#DE3642] transition-colors">
               <i className='bx bxl-github'></i>
             </a>
             <a href="#" className="hover:text-[#DE3642] transition-colors">
@@ -51,7 +51,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-[#1f1f1f] text-center py-6 text-sm">
-        © {new Date().getFullYear()} Grupo Perú — Todos los derechos reservados
+        © {new Date().getFullYear()} BLOG — Todos los derechos reservados
       </div>
 
     </footer>

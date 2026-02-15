@@ -12,28 +12,28 @@ const Contact = () => {
       image: "/authors/cristian/cristian.jpg"
     },
     {
-      id: "ana",
-      name: "Ana",
-      email: "ana@blog.com",
-      image: "/authors/user.png"
+      id: "katherine",
+      name: "Katherine",
+      email: "katherinealexandra2018@gmail.com",
+      image: "/authors/katherine/katherine.jpg"
     },
     {
       id: "luis",
       name: "Luis",
       email: "luisamaya1518@gmail.com",
-      image: "/authors/user.png"
+      image: "/authors/luis/luis.jpg"
     },
     {
-      id: "maria",
-      name: "Maria",
-      email: "maria@blog.com",
-      image: "/authors/user.png"
+      id: "tania",
+      name: "Tania",
+      email: "taniagcheztt@gmail.com",
+      image: "/authors/tania/tania.jpg"
     },
     {
-      id: "diego",
-      name: "Diego",
-      email: "diego@blog.com",
-      image: "/authors/user.png"
+      id: "eunice",
+      name: "Eunice",
+      email: "eu.martinez.127@gmail.com",
+      image: "/authors/e/e.jpg"
     }
   ];
 
