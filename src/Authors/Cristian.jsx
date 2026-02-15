@@ -9,8 +9,8 @@ import {
   FaLaravel
 } from "react-icons/fa";
 import Footer from "../components/Footer";
-import { useEffect, useState } from "react"; // <--- Faltaba useState aquí
-import { motion, AnimatePresence } from "framer-motion"; // <--- Faltaban estas para las animaciones
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import { SiDart, SiKotlin, SiFirebase, SiFigma, SiDjango, SiFlutter } from "react-icons/si";
@@ -79,7 +79,7 @@ const frameworks = [
         "template_75cpuzc",
         {
           ...formData,
-          to_email: "paradalopezcristianalexander@gmail.com", // Tu correo directo
+          to_email: "paradalopezcristianalexander@gmail.com",
           to_name: "Cristian"
         },
         "tsS_zRPGc6SdgkNoL"
@@ -88,7 +88,7 @@ const frameworks = [
         setSuccess(true);
         setLoading(false);
         setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSuccess(false), 5000); // Ocultar mensaje de éxito después de 5s
+        setTimeout(() => setSuccess(false), 5000);
       })
       .catch(() => {
         setLoading(false);
@@ -101,9 +101,8 @@ const frameworks = [
       {/* HERO + SOBRE MI */}
       <section className="flex flex-col lg:flex-row items-center justify-between p-8 gap-12">
   
-  {/* IZQUIERDA — Perfil */}
+  {/* Perfil */}
   <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
-    {/* Imagen centrada respecto a este bloque */}
     <img
       src="/authors/cristian/cristian.jpg"
       alt="Cristian"
@@ -135,7 +134,7 @@ const frameworks = [
         <span className="font-medium">Portafolio</span>
       </a>
 
-      {/* Icono GitHub Alineado */}
+      {/* Icono GitHub */}
       <a 
         href="https://github.com/CristianParadaLopez/" 
         target="_blank" 
@@ -146,14 +145,14 @@ const frameworks = [
         <i className='bx bxl-github'></i>
       </a>
       <a href="https://sv.linkedin.com/in/cristian-alexander-parada-l%C3%B3pez-40a504371" 
-      className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
-      title="Visitar mi Linkedin">
-              <i className='bx bxl-linkedin'></i>
-            </a>
+        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
+        title="Visitar mi Linkedin">
+        <i className='bx bxl-linkedin'></i>
+      </a>
     </div>
   </div>
 
-  {/* DERECHA — Sobre mí (Relleno con contenido dinámico) */}
+  {/* Sobre mí */}
   <div className="mt-12 lg:mt-0 lg:w-1/2 max-w-xl">
     <h2 className="text-3xl font-bold mb-6 font-[Rubik_Dirt] text-center lg:text-left">
       Sobre mí
@@ -165,7 +164,7 @@ const frameworks = [
       ya sea en el bolsillo del usuario o en su navegador.
     </p>
 
-    {/* SECCIÓN DE SKILLS PARA RELLENAR EL VACÍO */}
+    {/* SECCIÓN DE SKILLS  */}
     <div className="grid grid-cols-2 gap-4 text-sm">
       <div className="bg-[#1a1a1a] p-4 rounded-xl border-l-4 border-[#DE3642]">
         <h4 className="font-bold text-[#DE3642]">🎓 Educación</h4>
@@ -177,12 +176,11 @@ const frameworks = [
       </div>
     </div>
 
-    {/* ICONOS DE TECNOLOGÍAS (Da mucha vida visual) */}
-    {/* ICONOS DE TECNOLOGÍAS (Da mucha vida visual) */}
-<div className="mt-8">
-  <p className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4 text-center lg:text-left">
-    Stack Tecnológico Principal
-  </p>
+    {/* ICONOS DE TECNOLOGÍAS*/}
+    <div className="mt-8">
+      <p className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4 text-center lg:text-left">
+        Stack Tecnológico Principal
+      </p>
   
   {/* Contenedor de iconos con Hover dinámico */}
   <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-4xl text-gray-400">
@@ -308,7 +306,7 @@ const frameworks = [
             Mis proyectos recientes
           </h2>
 
-          {/* GRILLA WEB (Horizontal/Cards Modernas) */}
+          {/* GRILLA WEB */}
           <div className="mb-20">
             <h3 className="text-xl font-bold mb-8 flex items-center gap-2 justify-center">
               <i className='bx bx-laptop text-[#DE3642]'></i> Sistemas & Web
@@ -316,7 +314,6 @@ const frameworks = [
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {proyectosWeb.map((proyecto, index) => (
                 <div key={index} className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500">
-                  {/* Imagen con zoom al hover */}
                   <div className="h-56 overflow-hidden">
                     <img 
                       src={proyecto.img} 
@@ -339,32 +336,22 @@ const frameworks = [
             </div>
           </div>
 
-          {/* GRILLA MÓVIL (Vertical/Mockups) */}
+          {/* GRILLA MÓVIL */}
           <div className="flex flex-col items-center justify-center w-full">
-            
-            {/* Título centrado */}
             <h3 className="text-xl font-bold mb-8 flex items-center justify-center gap-2">
               <i className='bx bx-mobile-alt text-[#DE3642]'></i> Aplicaciones Móviles
             </h3>
-
-            {/* Grilla Ajustada */}
             <div className="flex flex-wrap justify-center gap-10 w-full max-w-6xl">
               {proyectosMoviles.map((app, index) => (
                 <div 
                   key={index} 
-                  className="group relative w-[240px] h-[480px] bg-[#1a1a1a] rounded-[2.5rem] border-[6px] border-[#2a2a2a] shadow-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-4"
-                >
-                  {/* Cámara "Notch" de la app */}
+                  className="group relative w-[240px] h-[480px] bg-[#1a1a1a] rounded-[2.5rem] border-[6px] border-[#2a2a2a] shadow-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-4">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#2a2a2a] rounded-b-xl z-20"></div>
-                  
-                  {/* Imagen de la app vertical */}
-                  <img 
+                  <img
                     src={app.img} 
                     alt={app.titulo} 
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" 
                   />
-
-                  {/* Info al Hover */}
                   <div className="absolute inset-0 bg-[#DE3642]/80 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h4 className="text-white font-bold text-lg mb-4">{app.titulo}</h4>
                     <a href={app.link} className="bg-white text-black p-3 rounded-full text-xl shadow-lg">
@@ -380,7 +367,6 @@ const frameworks = [
 
       {/* CONTACTO */}
       <section id="contacto" className="py-20 px-6 bg-[#0f0f1a] relative overflow-hidden">
-        {/* Decoración de fondo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#DE3642]/20 blur-[120px] rounded-full"></div>
 
         <div className="max-w-3xl mx-auto relative z-10">

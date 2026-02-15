@@ -47,12 +47,6 @@ const Post = () => {
         <p className="text-gray-300 leading-relaxed text-lg mb-12">
           {post.content || post.excerpt}
         </p>
-
-        {/* SISTEMA DE COMENTARIOS */}
-        <p className="text-gray-300 leading-relaxed text-lg">
-          {post.excerpt}
-        </p>
-
        
         <Comments postSlug={post.slug} />
 
