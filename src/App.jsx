@@ -6,7 +6,7 @@ import Post from "./pages/Post";
 import Author from "./pages/Author";
 
 
-import Header from "./components/header";
+import Header from "./components/Header";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Contact from "./pages/Contact";
