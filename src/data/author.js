@@ -38,18 +38,18 @@ const authors = [
     role: "Backend Developer",
     image: "/authors/eunice.png",
     about:
-      "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
+      "Desarrollador Frontend con experiencia en aplicaciones web y móviles. Apasionado por HTML y la Inteligencia Artificial.",
 
     contact: {
-      phone: "6430-4967",
-      email: "cristianparadalopez@gmail.com",
-      github: "https://github.com/CristianParadaLopez"
+      phone: "7325-0614",
+      email: "eu.martinez.127@gmail.com",
+      github: "https://github.com/eun-mar"
     },
 
     skills: {
       web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
-      mobile: ["Flutter", "Dart", "Kotlin"],
-      frameworks: ["Laravel", "Django"]
+      mobile: ["Dart", "Kotlin"],
+      frameworks: ["Laravel"]
     },
 
     projects: [
@@ -67,7 +67,7 @@ const authors = [
   },
   {
     slug: "tania",
-    name: "Tania Martínez",
+    name: "Tania Góchez",
     role: "Frontend Developer",
     image: "/authors/tania.png",
     about:
