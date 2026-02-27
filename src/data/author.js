@@ -3,7 +3,7 @@ const authors = [
     slug: "cristian",
     name: "Cristian Parada",
     role: "Full Stack Developer",
-    image: "/authors/cristian.png",
+    image: "/authors/cristian/cristian.jpg",
     about:
       "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
 
@@ -36,7 +36,7 @@ const authors = [
     slug: "eunice",
     name: "Eunice Martínez",
     role: "Backend Developer",
-    image: "/authors/eunice.png",
+    image: "/authors/e/e.jpg",
     about:
       "Desarrollador Frontend con experiencia en aplicaciones web y móviles. Apasionado por HTML y la Inteligencia Artificial.",
 
@@ -69,7 +69,7 @@ const authors = [
     slug: "tania",
     name: "Tania Góchez",
     role: "Frontend Developer",
-    image: "/authors/tania.png",
+    image: "/authors/tania/tania.jpg",
     about:
       "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
 
