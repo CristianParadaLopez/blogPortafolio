@@ -142,7 +142,7 @@ const authors = [
     contact: {
       phone: "6132-4807",
       email: "luisamaya1518@gmail.com",
-      github: ""
+      github: "https://github.com/luisamaya1518-rgb"
     },
 
     skills: {
