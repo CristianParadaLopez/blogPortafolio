@@ -63,7 +63,6 @@ const Comments = ({ postSlug }) => {
         </h3>
       </div>
 
-      {/* 1. LISTA DE COMENTARIOS PRIMERO (UX: Fomenta la lectura) */}
       <div className="space-y-8 mb-16">
         {comments.length === 0 ? (
           <p className="text-gray-500 italic text-center py-10 bg-white/[0.02] rounded-3xl border border-dashed border-white/10">
@@ -73,7 +72,6 @@ const Comments = ({ postSlug }) => {
           comments.map((comment) => (
             <div key={comment.id} className="group animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="flex gap-4">
-                {/* Avatar dinámico */}
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-[#DE3642] to-[#8a1d25] flex items-center justify-center font-bold text-white shadow-lg border border-white/10">
                   {comment.name.charAt(0).toUpperCase()}
                 </div>
@@ -102,7 +100,6 @@ const Comments = ({ postSlug }) => {
                     </button>
                   </div>
 
-                  {/* FORMULARIO DE RESPUESTA (Inline UX) */}
                   {activeReply === comment.id && (
                     <div className="mt-4 pl-4 border-l-2 border-[#DE3642]/30 animate-in zoom-in-95 duration-200">
                       <textarea
@@ -122,11 +119,9 @@ const Comments = ({ postSlug }) => {
           ))
         )}
       </div>
-
-      {/* 2. FORMULARIO PRINCIPAL AL FINAL */}
       <div className="bg-[#0a0a0a] border border-white/5 p-8 rounded-[2rem] shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-[#DE3642]/5 blur-[80px] rounded-full"></div>
-        
+
         <h4 className="text-lg font-bold mb-6">Deja un comentario</h4>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input

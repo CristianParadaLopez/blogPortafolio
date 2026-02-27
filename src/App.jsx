@@ -30,9 +30,6 @@ export default function App() {
   return (
     <main className="bg-black text-white min-h-screen relative overflow-x-hidden">
       <Header />
-
-      {/* FONDO INTERACTIVO GLOBAL */}
-      {/* Se mantiene visible en Home, pero z-0 permite que el texto z-10 esté encima */}
       <div className={`fixed inset-0 transition-opacity duration-1000 z-0 ${isHome ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
         <InteractiveBackground />
       </div>

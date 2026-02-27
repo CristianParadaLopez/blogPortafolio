@@ -3,7 +3,6 @@ import posts from "../data/posts";
 import Footer from "../components/Footer";
 
 const Category = () => {
-  // Obtenemos un array de objetos únicos con nombre y slug
   const categories = Array.from(new Set(posts.map(p => p.categorySlug)))
     .map(slug => {
       const post = posts.find(p => p.categorySlug === slug);

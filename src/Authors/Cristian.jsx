@@ -34,28 +34,28 @@ const Cristian = () => {
 
 
 
-const webSkills = [
-  { name: "HTML", icon: <FaHtml5 />, hoverColor: "hover:text-[#E34F26]" },
-  { name: "CSS", icon: <FaCss3Alt />, hoverColor: "hover:text-[#1572B6]" },
-  { name: "Bootstrap", icon: <FaBootstrap />, hoverColor: "hover:text-[#7952B3]" },
-  { name: "JavaScript", icon: <FaJs />, hoverColor: "hover:text-[#F7DF1E]" },
-  { name: "PHP", icon: <FaPhp />, hoverColor: "hover:text-[#777BB4]" },
-];
+  const webSkills = [
+    { name: "HTML", icon: <FaHtml5 />, hoverColor: "hover:text-[#E34F26]" },
+    { name: "CSS", icon: <FaCss3Alt />, hoverColor: "hover:text-[#1572B6]" },
+    { name: "Bootstrap", icon: <FaBootstrap />, hoverColor: "hover:text-[#7952B3]" },
+    { name: "JavaScript", icon: <FaJs />, hoverColor: "hover:text-[#F7DF1E]" },
+    { name: "PHP", icon: <FaPhp />, hoverColor: "hover:text-[#777BB4]" },
+  ];
 
-const mobileSkills = [
-  { name: "Flutter", icon: <SiFlutter />, hoverColor: "hover:text-[#02569B]" },
-  { name: "Dart", icon: <SiDart />, hoverColor: "hover:text-[#0175C2]" },
-  { name: "Java", icon: <FaJava />, hoverColor: "hover:text-[#007396]" },
-  { name: "Kotlin", icon: <SiKotlin />, hoverColor: "hover:text-[#7F52FF]" },
-  { name: "Firebase", icon: <SiFirebase />, hoverColor: "hover:text-[#FFCA28]" },
-  { name: "Figma", icon: <SiFigma />, hoverColor: "hover:text-[#F24E1E]" },
-];
+  const mobileSkills = [
+    { name: "Flutter", icon: <SiFlutter />, hoverColor: "hover:text-[#02569B]" },
+    { name: "Dart", icon: <SiDart />, hoverColor: "hover:text-[#0175C2]" },
+    { name: "Java", icon: <FaJava />, hoverColor: "hover:text-[#007396]" },
+    { name: "Kotlin", icon: <SiKotlin />, hoverColor: "hover:text-[#7F52FF]" },
+    { name: "Firebase", icon: <SiFirebase />, hoverColor: "hover:text-[#FFCA28]" },
+    { name: "Figma", icon: <SiFigma />, hoverColor: "hover:text-[#F24E1E]" },
+  ];
 
-const frameworks = [
-  { name: "Laravel", icon: <FaLaravel />, hoverColor: "hover:text-[#FF2D20]" },
-  { name: "React", icon: <FaReact />, hoverColor: "hover:text-[#61DAFB]" },
-  { name: "Django", icon: <SiDjango />, hoverColor: "hover:text-[#092E20]" },
-];
+  const frameworks = [
+    { name: "Laravel", icon: <FaLaravel />, hoverColor: "hover:text-[#FF2D20]" },
+    { name: "React", icon: <FaReact />, hoverColor: "hover:text-[#61DAFB]" },
+    { name: "Django", icon: <SiDjango />, hoverColor: "hover:text-[#092E20]" },
+  ];
   // Proyectos 
   const proyectosWeb = [
     { img: "/authors/cristian/proyectos/proyecto1.png", link: "https://github.com/CristianParadaLopez/virtualmoda", titulo: "Virtual Fashion" },
@@ -101,14 +101,14 @@ const frameworks = [
 
   return (
     <div className="bg-black text-gray-200 min-h-screen selection:bg-[#DE3642] selection:text-white">
-      
+
       {/* HERO SECTION */}
       <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            
-            {/* Perfil con Efecto Circular */}
-            <motion.div 
+
+            {/* Perfil */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="relative group contenedor-circular-animado"
@@ -131,14 +131,14 @@ const frameworks = [
 
             {/* Info Principal */}
             <div className="flex-1 text-center lg:text-left">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="inline-block px-4 py-1 rounded-full border border-[#DE3642]/40 text-[#DE3642] text-sm font-bold mb-4 uppercase tracking-tighter"
               >
                 Full Stack Developer | Mobile Specialist
               </motion.span>
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -174,12 +174,12 @@ const frameworks = [
         </div>
       </section>
 
-      {/* INFINITE SKILLS SCROLL */}
+      {/* SKILLS SCROLL */}
       <section className="py-10 bg-[#050505] border-y border-white/5">
-      <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Stack Tecnológico</h2>
-            <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Stack Tecnológico</h2>
+          <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
+        </div>
         <div className="w-full overflow-hidden relative">
           <div className="flex w-max flex-nowrap animate-infinite-scroll py-4 whitespace-nowrap">
             {[...fullStackItems, ...fullStackItems].map((tech, index) => (
@@ -196,83 +196,79 @@ const frameworks = [
         </div>
       </section>
       <section className="py-24 px-6 relative">
-  {/* Decoración de fondo sutil */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(222,54,66,0.05)_0%,transparent_70%)] pointer-events-none"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(222,54,66,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-  <div className=" max-w-7xl mx-auto">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-      
-      {[
-        { 
-          title: "Desarrollo Web", 
-          desc: "Sistemas integrales con arquitecturas escalables y alto rendimiento.",
-          skills: webSkills, 
-          icon: "bx-code-block",
-          accent: "from-[#DE3642]/20 to-transparent"
-        },
-        { 
-          title: "Desarrollo Móvil", 
-          desc: "Apps nativas e híbridas enfocadas en una experiencia de usuario fluida.",
-          skills: mobileSkills, 
-          icon: "bx-mobile-vibration",
-          accent: "from-blue-500/10 to-transparent"
-        },
-        { 
-          title: "Ecosistema & Logic", 
-          desc: "Dominio de frameworks modernos para soluciones backend y frontend.",
-          skills: frameworks, 
-          icon: "bx-desktop", 
-          accent: "from-purple-500/10 to-transparent"
-        }
-      ].map((category, idx) => (
-        <motion.div
-          key={idx}
-          whileHover={{ y: -12 }}
-          className=" card-animada relative group p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:border-[#DE3642]/40 transition-all duration-500 overflow-hidden"
-        >
-          {/* Resplandor interno al hacer hover */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+        <div className=" max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-          <div className="relative z-10">
-            {/* Icono de Categoría */}
-            <div className="w-16 h-16 rounded-2xl bg-[#DE3642]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#DE3642] transition-all duration-500">
-              <i className={`bx ${category.icon} text-3xl text-[#DE3642] group-hover:text-white`}></i>
-            </div>
+            {[
+              {
+                title: "Desarrollo Web",
+                desc: "Sistemas integrales con arquitecturas escalables y alto rendimiento.",
+                skills: webSkills,
+                icon: "bx-code-block",
+                accent: "from-[#DE3642]/20 to-transparent"
+              },
+              {
+                title: "Desarrollo Móvil",
+                desc: "Apps nativas e híbridas enfocadas en una experiencia de usuario fluida.",
+                skills: mobileSkills,
+                icon: "bx-mobile-vibration",
+                accent: "from-blue-500/10 to-transparent"
+              },
+              {
+                title: "Ecosistema & Logic",
+                desc: "Dominio de frameworks modernos para soluciones backend y frontend.",
+                skills: frameworks,
+                icon: "bx-desktop",
+                accent: "from-purple-500/10 to-transparent"
+              }
+            ].map((category, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -12 }}
+                className=" card-animada relative group p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:border-[#DE3642]/40 transition-all duration-500 overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
 
-            <h4 className="text-2xl font-black text-white mb-4 uppercase tracking-tighter italic">
-              {category.title}
-            </h4>
-            
-            <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light">
-              {category.desc}
-            </p>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-[#DE3642]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#DE3642] transition-all duration-500">
+                    <i className={`bx ${category.icon} text-3xl text-[#DE3642] group-hover:text-white`}></i>
+                  </div>
 
-            {/* Píldoras de Skills */}
-            <div className="flex flex-wrap justify-start gap-3">
-              {category.skills.map((skill, i) => (
-                <div
-                  key={i}
-                  className={` flex items-center gap-2 px-4 py-2 rounded-xl bg-black/40 border border-white/5 
+                  <h4 className="text-2xl font-black text-white mb-4 uppercase tracking-tighter italic">
+                    {category.title}
+                  </h4>
+
+                  <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+                    {category.desc}
+                  </p>
+
+                  <div className="flex flex-wrap justify-start gap-3">
+                    {category.skills.map((skill, i) => (
+                      <div
+                        key={i}
+                        className={` flex items-center gap-2 px-4 py-2 rounded-xl bg-black/40 border border-white/5 
                   transition-all duration-300 group/skill hover:border-[#DE3642]/50 hover:bg-black/60 shadow-lg`}
-                >
-                  <span className={`text-lg text-gray-400 transition-colors duration-300 ${skill.hoverColor.replace('hover:', 'group-hover/skill:')}`}>
-                    {skill.icon}
-                  </span>
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-gray-500 group-hover/skill:text-white transition-colors">
-                    {skill.name}
-                  </span>
+                      >
+                        <span className={`text-lg text-gray-400 transition-colors duration-300 ${skill.hoverColor.replace('hover:', 'group-hover/skill:')}`}>
+                          {skill.icon}
+                        </span>
+                        <span className="text-[11px] font-bold uppercase tracking-widest text-gray-500 group-hover/skill:text-white transition-colors">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
+
           </div>
-        </motion.div>
-      ))}
+        </div>
+      </section>
 
-    </div>
-  </div>
-</section>
-
-      {/* PROYECTOS SECTION */}
+      {/* Sección Proyectos */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
@@ -292,17 +288,16 @@ const frameworks = [
               {proyectosWeb.map((proyecto, index) => (
                 <div key={index} className="card-animada group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500">
                   <div className="h-56 overflow-hidden">
-                    <img 
-                      src={proyecto.img} 
-                      alt={proyecto.titulo} 
+                    <img
+                      src={proyecto.img}
+                      alt={proyecto.titulo}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
-                  {/* Overlay informativo */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                     <h6 className="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{proyecto.titulo}</h6>
-                    <a 
-                      href={proyecto.link} 
+                    <a
+                      href={proyecto.link}
                       className="inline-block w-max bg-[#DE3642] text-white px-4 py-2 rounded-lg text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75"
                     >
                       Ver Proyecto <i className='bx bx-right-arrow-alt'></i>
@@ -313,7 +308,7 @@ const frameworks = [
             </div>
           </div>
 
-          {/* Mobile Showcase */}
+          {/* Mobile */}
           <div className="bg-[#050505] rounded-[3rem] p-12 border border-white/5">
             <h3 className="text-2xl font-bold text-white mb-12 flex items-center gap-3">
               <FaMobileAlt className="text-[#DE3642]" /> Mobile Apps Showcase
@@ -338,13 +333,13 @@ const frameworks = [
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* Contacto */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#111] to-black rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-12 opacity-5">
-             <i className='bx bx-paint-roll text-[180px] text-[#DE3642]'></i>
+            <i className='bx bx-paint-roll text-[180px] text-[#DE3642]'></i>
           </div>
-          
+
           <div className="relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4 italic uppercase tracking-tighter">¿Hablamos?</h2>
@@ -357,7 +352,7 @@ const frameworks = [
                   type="text"
                   placeholder="Tu nombre"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -365,7 +360,7 @@ const frameworks = [
                   type="email"
                   placeholder="Tu correo"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -373,7 +368,7 @@ const frameworks = [
               <textarea
                 placeholder="Cuéntame sobre tu idea..."
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows="4"
                 className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all resize-none"

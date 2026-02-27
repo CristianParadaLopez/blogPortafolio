@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section className="relative flex items-center justify-center min-h-[80vh] lg:min-h-[90vh] overflow-hidden px-6 text-center">
       
-      {/* CONTENIDO CENTRADO */}
+      {/* CONTENIDO */}
       <div data-aos="fade-up" className="max-w-4xl z-20 relative">
         <span className="text-[#DE3642] font-bold tracking-[0.5em] text-xs sm:text-sm uppercase mb-4 block">
           Proyecto Grupal de Computación

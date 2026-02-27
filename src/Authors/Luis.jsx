@@ -52,12 +52,11 @@ const techIcons = [
   return (
     <div className="bg-black text-gray-200 min-h-screen selection:bg-[#DE3642] selection:text-white">
       
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             
-            {/* Left: Profile Image & Badges */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -76,7 +75,6 @@ const techIcons = [
                </a>
             </motion.div>
 
-            {/* Right: Info */}
             <div className="flex-1 text-center lg:text-left">
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
@@ -112,21 +110,18 @@ const techIcons = [
         </div>
       </section>
 
-      {/* SKILLS - Bento Grid Style */}
+      {/* SKILLS */}
       <section className="py-2 bg-[#050505]">
         <div className=" max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Stack Tecnológico</h2>
             <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
           </div>
-          {/* --- PARTE 1: SCROLL INFINITO --- */}
             <div className="w-full overflow-hidden mb-20 mt-10 relative">
-              {/* Máscara de desvanecimiento en los bordes */}
               <div className="absolute inset-0 z-10 pointer-events-none [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"></div>
               
-              <div className="flex w-max flex-nowrap"> {/* w-max es clave aquí */}
+              <div className="flex w-max flex-nowrap">
                 <div className="flex items-center animate-infinite-scroll py-4 whitespace-nowrap">
-                  {/* Triplicamos el contenido para asegurar que no haya huecos blancos */}
                   {[...techIcons, ...techIcons, ...techIcons].map((tech, index) => (
                     <div key={index} className="flex items-center gap-4 mx-12 group transition-all">
                       <i className={`bx ${tech.icon} text-5xl text-gray-500/40 ${tech.color} transition-colors duration-300`}></i>
@@ -198,7 +193,7 @@ const techIcons = [
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACTO */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#111] to-black rounded-[2rem] p-8 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-10 opacity-10">

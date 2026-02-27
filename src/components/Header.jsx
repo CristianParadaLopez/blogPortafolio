@@ -8,14 +8,12 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Control del fondo al hacer scroll (Efecto Glassmorphism)
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Cerrar dropdown de integrantes al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -71,7 +69,7 @@ const Header = () => {
               </Link>
             </li>
 
-            {/* DROPDOWN INTEGRANTES (Desktop & Mobile Adaptable) */}
+            {/* DROPDOWN INTEGRANTES */}
             <li className="relative my-2 md:my-0" ref={dropdownRef}>
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -116,7 +114,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* ESTILOS CSS INYECTADOS PARA EL SUBRAYADO (Para no ensuciar el JSX) */}
       <style dangerouslySetInnerHTML={{ __html: `
         .nav-link-custom {
           position: relative;
