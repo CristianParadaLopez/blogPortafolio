@@ -22,7 +22,7 @@ const Hero = () => {
           <a href="#articulos" className="w-full sm:w-auto bg-[#DE3642] text-white py-4 px-10 rounded-full font-bold hover:shadow-[0_0_30px_rgba(222,54,66,0.6)] hover:scale-105 transition-all duration-300">
             Explorar Artículos
           </a>
-          <a href="https://github.com..." target="_blank" className='w-full sm:w-auto border border-white/20 py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2'>
+          <a href="https://github.com/CristianParadaLopez/blogPortafolio" target="_blank" className='w-full sm:w-auto border border-white/20 py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2'>
             Ver Repositorio <i className='bx bxl-github text-xl'></i>
           </a>
         </div>

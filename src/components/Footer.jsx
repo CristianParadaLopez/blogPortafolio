@@ -25,7 +25,7 @@ const Footer = () => {
           </h3>
           <ul className="space-y-4 text-sm">
             <li><a href="/" className="hover:text-[#DE3642] transition-colors flex items-center gap-2"><i className='bx bx-chevron-right'></i> Inicio</a></li>
-            <li><a href="/categorias/Inteligencia Artificial" className="hover:text-[#DE3642] transition-colors flex items-center gap-2"><i className='bx bx-chevron-right'></i> IA & Categorías</a></li>
+            <li><a href="/categorias" className="hover:text-[#DE3642] transition-colors flex items-center gap-2"><i className='bx bx-chevron-right'></i>Categorías</a></li>
             <li><a href="/contacto" className="hover:text-[#DE3642] transition-colors flex items-center gap-2"><i className='bx bx-chevron-right'></i> Contacto</a></li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ const Footer = () => {
               <i className='bx bxl-github'></i>
             </a>
             <a 
-              href="#" 
+              href="https://www.instagram.com/uluterana/?hl=es" 
               className="h-12 w-12 rounded-xl bg-white/5 flex items-center justify-center text-2xl hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:text-white transition-all duration-300"
               title="Síguenos en Instagram"
             >
@@ -93,7 +93,7 @@ const Footer = () => {
             Hecho con <i className='bx bxs-heart text-[#DE3642] mx-1'></i> por el Grupo de Computación
           </div>
           <div className="text-gray-600">
-            React + Tailwind + Framer Motion
+            React + Tailwind + Vercel
           </div>
         </div>
       </div>

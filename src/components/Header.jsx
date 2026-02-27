@@ -99,7 +99,7 @@ const Header = () => {
 
             {/* CATEGORÍAS */}
             <li className='my-2 md:my-0'>
-              <Link to="/categorias/react" onClick={closeAll} className="nav-link-custom">
+              <Link to="/categorias" onClick={closeAll} className="nav-link-custom">
                 Categorías
                 <span className="nav-underline"></span>
               </Link>
