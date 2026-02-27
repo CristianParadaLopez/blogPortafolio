@@ -74,15 +74,15 @@ const authors = [
       "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
 
     contact: {
-      phone: "6430-4967",
-      email: "cristianparadalopez@gmail.com",
-      github: "https://github.com/CristianParadaLopez"
+      phone: "7777-2333",
+      email: "taniagcheztt@gmail.com",
+      github: "https://github.com/taniagochez"
     },
 
     skills: {
       web: ["HTML", "CSS", "JavaScript", "React", "PHP"],
-      mobile: ["Flutter", "Dart", "Kotlin"],
-      frameworks: ["Laravel", "Django"]
+      mobile: ["Dart", "Kotlin"],
+      frameworks: ["Laravel"]
     },
 
     projects: [
