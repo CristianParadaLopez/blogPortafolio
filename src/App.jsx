@@ -10,6 +10,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Post = lazy(() => import("./pages/Post"));
 const Author = lazy(() => import("./pages/Author"));
 const Category = lazy(() => import("./pages/Category"));
+const CategoryDetail = lazy(() => import("./components/CategoryDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 const PageLoader = () => (
@@ -40,7 +41,8 @@ export default function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/categorias/:categoryName" element={<Category />} />
+            <Route path="/categorias" element={<Category />} />
+            <Route path="/categorias/:categorySlug" element={<CategoryDetail />} />
             <Route path="/blog/:slug" element={<Post />} />
             <Route path="/autor/:authorSlug" element={<Author />} />
             <Route path="/contacto" element={<Contact />} />

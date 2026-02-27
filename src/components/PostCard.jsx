@@ -5,17 +5,21 @@ const PostCard = ({ title, excerpt, image, author, authorSlug, category, slug, d
   return (
     <article className="group bg-[#0a0a0a] border border-white/5 rounded-3xl overflow-hidden hover:border-[#DE3642]/50 transition-all duration-500 flex flex-col shadow-xl">
       <div className="relative h-60 overflow-hidden">
-        {/* Etiqueta flotante */}
-        <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-[#DE3642] text-[10px] font-bold px-3 py-1 rounded-full border border-[#DE3642]/30">
-          {category}
-        </div>
-        <img 
-          src={image} 
-          alt={title} 
-          loading="lazy" // <--- CRÍTICO para la velocidad
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
-      </div>
+    {/* Link en la categoría para ir directo a la sección */}
+    <Link 
+      to={`/categorias/${category}`} 
+      className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-[#DE3642] text-[10px] font-bold px-3 py-1 rounded-full border border-[#DE3642]/30 hover:bg-[#DE3642] hover:text-white transition-colors"
+    >
+      {category}
+    </Link>
+    <Link to={`/blog/${slug}`}>
+    <img 
+      src={image} 
+      alt={title} 
+      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+    />
+    </Link>
+  </div>
 
       <div className="p-8 flex flex-col flex-grow">
         <Link to={`/blog/${slug}`}>

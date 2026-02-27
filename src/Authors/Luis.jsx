@@ -21,8 +21,8 @@ const Luis = () => {
   if (!luis) return <div className="text-white text-center py-20">Autor no encontrado</div>;
 
   const proyectosWeb = [
-    { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "Virtual Fashion", desc: "Plataforma de e-commerce enfocada en tendencias digitales." },
-    { img: "/authors/luis/proyectos/proyecto10.png", link: "#", titulo: "Sistema de Farmacia", desc: "Control de inventario y ventas con reportes en tiempo real." },
+    { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "SportHub", desc: "Plataforma de inventario de articulos de deportes" },
+    { img: "/authors/luis/proyectos/proyecto10.png", link: "#", titulo: "App Móvil", desc: "App de habitos saludables" },
   ];
 
   const handleSubmit = (e) => {
@@ -46,7 +46,7 @@ const techIcons = [
   { nombre: "MySQL", icon: "bxl-postgresql", color: "hover:text-[#336791]" },
   { nombre: "Firebase", icon: "bxl-firebase", color: "hover:text-[#FFCA28]" },
   { nombre: "Cisco", icon: "bx-network-chart", color: "hover:text-[#049FD9]" },
-  { nombre: "Laravel", icon: "bxl-tailwind-css", color: "hover:text-[#FF2D20]" }, // Usando boxicons
+  { nombre: "Laravel", icon: "bxl-tailwind-css", color: "hover:text-[#FF2D20]" }, 
   { nombre: "Kotlin", icon: "bxl-android", color: "hover:text-[#7F52FF]" },
 ];
   return (

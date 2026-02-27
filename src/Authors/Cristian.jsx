@@ -1,3 +1,9 @@
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import authors from '../data/author';
+import Footer from "../components/Footer";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,17 +14,25 @@ import {
   FaReact,
   FaLaravel
 } from "react-icons/fa";
-import Footer from "../components/Footer";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
-import { SiDart, SiKotlin, SiFirebase, SiFigma, SiDjango, SiFlutter } from "react-icons/si";
+// Iconos
+import { FaGithub, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaLinkedin, FaLaptopCode, FaMobileAlt } from "react-icons/fa";
+import { SiDart, SiKotlin, SiFirebase, SiFigma, SiDjango, SiFlutter, SiLaravel, SiReact, SiPhp, SiJavascript } from "react-icons/si";
 
 const Cristian = () => {
+  const cristian = authors.find(author => author.slug === 'cristian');
+
   useEffect(() => {
-    document.title = "Portafolio | Cristian Parada";
-  }, []);
+    if (cristian) document.title = `Portafolio | ${cristian.name}`;
+  }, [cristian]);
+
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  if (!cristian) return <div className="text-white text-center py-20">Autor no encontrado</div>;
+
+
 
 const webSkills = [
   { name: "HTML", icon: <FaHtml5 />, hoverColor: "hover:text-[#E34F26]" },
@@ -42,48 +56,37 @@ const frameworks = [
   { name: "React", icon: <FaReact />, hoverColor: "hover:text-[#61DAFB]" },
   { name: "Django", icon: <SiDjango />, hoverColor: "hover:text-[#092E20]" },
 ];
-
+  // Proyectos 
   const proyectosWeb = [
-    { img: "/authors/cristian/proyectos/proyecto1.png", link: "#", titulo: "Virtual Fashion" },
-    { img: "/authors/cristian/proyectos/proyecto2.png", link: "#", titulo: "Sistema de Farmacia" },
-    { img: "/authors/cristian/proyectos/proyecto3.jpg", link: "#", titulo: "Ecommerce Paypal" },
-    { img: "/authors/cristian/proyectos/proyecto4.png", link: "#", titulo: "Dalezius Restaurante" },
+    { img: "/authors/cristian/proyectos/proyecto1.png", link: "https://github.com/CristianParadaLopez/virtualmoda", titulo: "Virtual Fashion" },
+    { img: "/authors/cristian/proyectos/proyecto2.png", link: "https://github.com/CristianParadaLopez/sistema-punto-de-venta", titulo: "Sistema de Farmacia" },
+    { img: "/authors/cristian/proyectos/proyecto3.jpg", link: "https://github.com/CristianParadaLopez/Ecommerce-paypal-con-django", titulo: "Ecommerce Paypal" },
+    { img: "/authors/cristian/proyectos/proyecto4.png", link: "https://github.com/CristianParadaLopez/Restaurante-laravel-11", titulo: "Dalezius Restaurante" },
     { img: "/authors/cristian/proyectos/proyecto5.png", link: "#", titulo: "GinePlus SPV" }
 
   ];
 
   const proyectosMoviles = [
-    { img: "/authors/cristian/proyectos/proyecto6.png", link: "https://appetize.io/app/b_fdru6yjal64zkhpc7mroie46xe", titulo: "App Gestión Tareas" },
-    { img: "/authors/cristian/proyectos/proyecto7.png", link: "https://appetize.io/app/b_qygxqdvica4wwovzltoddi2xte", titulo: "App IA Integrada" }
+    { img: "/authors/cristian/proyectos/proyecto7.png", link: "https://appetize.io/app/b_qygxqdvica4wwovzltoddi2xte", titulo: "NutriSCAN AI", desc: "IA con Gemini y Flutter para nutrición." },
+    { img: "/authors/cristian/proyectos/proyecto6.png", link: "https://appetize.io/app/b_fdru6yjal64zkhpc7mroie46xe", titulo: "Transforma App", desc: "App nativa en Java para FUSALMO." }
   ];
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const fullStackItems = [
+    { nombre: "Laravel", icon: <SiLaravel />, color: "hover:text-[#FF2D20]" },
+    { nombre: "Django", icon: <SiDjango />, color: "hover:text-[#092E20]" },
+    { nombre: "Flutter", icon: <SiFlutter />, color: "hover:text-[#02569B]" },
+    { nombre: "React", icon: <SiReact />, color: "hover:text-[#61DAFB]" },
+    { nombre: "Firebase", icon: <SiFirebase />, color: "hover:text-[#FFCA28]" },
+    { nombre: "PHP", icon: <SiPhp />, color: "hover:text-[#777BB4]" },
+    { nombre: "JavaScript", icon: <SiJavascript />, color: "hover:text-[#F7DF1E]" },
+    { nombre: "Kotlin", icon: <SiKotlin />, color: "hover:text-[#7F52FF]" },
+    { nombre: "Figma", icon: <SiFigma />, color: "hover:text-[#F24E1E]" }
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    emailjs
-      .send(
-        "service_lv0sqre",
-        "template_75cpuzc",
-        {
-          ...formData,
-          to_email: "paradalopezcristianalexander@gmail.com",
-          to_name: "Cristian"
-        },
-        "tsS_zRPGc6SdgkNoL"
-      )
+    emailjs.send("service_lv0sqre", "template_75cpuzc", { ...formData, to_email: cristian.contact.email, to_name: cristian.name }, "tsS_zRPGc6SdgkNoL")
       .then(() => {
         setSuccess(true);
         setLoading(false);
@@ -97,223 +100,197 @@ const frameworks = [
   };
 
   return (
-    <div className="font-sans">
-      {/* HERO + SOBRE MI */}
-      <section className="flex flex-col lg:flex-row items-center justify-between p-8 gap-12">
-  
-  {/* Perfil */}
-  <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:w-1/2">
-    <img
-      src="/authors/cristian/cristian.jpg"
-      alt="Cristian"
-      className="w-[180px] h-[180px] rounded-full object-cover mb-6 shadow-lg lg:self-center border-4 border-[#DE3642]"
-    />
+    <div className="bg-black text-gray-200 min-h-screen selection:bg-[#DE3642] selection:text-white">
+      
+      {/* HERO SECTION */}
+      <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            
+            {/* Perfil con Efecto Circular */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="relative group contenedor-circular-animado"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#DE3642] to-[#ff6b75] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <img
+                src={cristian.image}
+                alt={cristian.name}
+                className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-black shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex gap-3">
+                <a href={cristian.contact.github} target="_blank" className="bg-[#1a1a1a] p-3 rounded-full border border-white/10 text-white hover:text-[#DE3642] hover:scale-110 transition-all shadow-xl">
+                  <FaGithub size={20} />
+                </a>
+                <a href="https://sv.linkedin.com/in/cristian-alexander-parada-l%C3%B3pez-40a504371" target="_blank" className="bg-[#1a1a1a] p-3 rounded-full border border-white/10 text-white hover:text-[#0077B5] hover:scale-110 transition-all shadow-xl">
+                  <FaLinkedin size={20} />
+                </a>
+              </div>
+            </motion.div>
 
-    <h1 className="text-4xl sm:text-5xl font-bold font-[Rubik_Dirt] mb-4">
-      Hola, soy Cristian Parada
-    </h1>
+            {/* Info Principal */}
+            <div className="flex-1 text-center lg:text-left">
+              <motion.span 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-block px-4 py-1 rounded-full border border-[#DE3642]/40 text-[#DE3642] text-sm font-bold mb-4 uppercase tracking-tighter"
+              >
+                Full Stack Developer | Mobile Specialist
+              </motion.span>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl lg:text-8xl font-black text-white mb-6 leading-tight tracking-tighter"
+              >
+                HOLA, SOY <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DE3642] via-white to-gray-500 uppercase">{cristian.name}</span>
+              </motion.h1>
+              <p className="text-xl text-gray-400 max-w-2xl mb-8 leading-relaxed font-light">
+                {cristian.about} Especializado en crear ecosistemas digitales escalables y aplicaciones móviles con integración de IA.
+              </p>
 
-    <h3 className="text-xl text-[#DE3642] font-semibold">
-      Desarrollador Full Stack | Web & Mobile Apps
-    </h3>
-    
-    <div className='flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-12'>
-      {/* Botón CV */}
-      <a 
-        href="/CV/CV_Cristian_Parada.pdf"
-        download="CV_Cristian_Parada.pdf" 
-        className='flex items-center gap-2 border border-[#2a2a2a] py-2 px-5 rounded-full transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#DE3642]'
-      >
-        <i className="bx bxs-file-pdf text-xl"></i> 
-        <span className="font-medium">Descargar CV</span>
-      </a>
-
-      {/* Botón Portafolio */}
-      <a href="https://cristianparadalopez.github.io/Portafolio/" className='flex items-center gap-2 border border-[#2a2a2a] py-2 px-5 rounded-full bg-gray-300 text-black hover:bg-[#1a1a1a] hover:text-[#DE3642] shadow-md transition-all duration-300'>
-        <i className="bx bx-folder-open text-xl"></i> 
-        <span className="font-medium">Portafolio</span>
-      </a>
-
-      {/* Icono GitHub */}
-      <a 
-        href="https://github.com/CristianParadaLopez/" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
-        title="Visitar mi GitHub"
-      >
-        <i className='bx bxl-github'></i>
-      </a>
-      <a href="https://sv.linkedin.com/in/cristian-alexander-parada-l%C3%B3pez-40a504371" 
-        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
-        title="Visitar mi Linkedin">
-        <i className='bx bxl-linkedin'></i>
-      </a>
-    </div>
-  </div>
-
-  {/* Sobre mí */}
-  <div className="mt-12 lg:mt-0 lg:w-1/2 max-w-xl">
-    <h2 className="text-3xl font-bold mb-6 font-[Rubik_Dirt] text-center lg:text-left">
-      Sobre mí
-    </h2>
-
-    <p className="text-lg leading-relaxed mb-8 text-center lg:text-left">
-      Estudiante de 5to año de Licenciatura en Ciencias de la Computación,
-      con formación técnica. Apasionado por transformar ideas en código funcional, 
-      ya sea en el bolsillo del usuario o en su navegador.
-    </p>
-
-    {/* SECCIÓN DE SKILLS  */}
-    <div className="grid grid-cols-2 gap-4 text-sm">
-      <div className="bg-[#1a1a1a] p-4 rounded-xl border-l-4 border-[#DE3642]">
-        <h4 className="font-bold text-[#DE3642]">🎓 Educación</h4>
-        <p className="text-gray-400">Ciencias de la Computación (5to año)</p>
-      </div>
-      <div className="bg-[#1a1a1a] p-4 rounded-xl border-l-4 border-[#DE3642]">
-        <h4 className="font-bold text-[#DE3642]">📍 Ubicación</h4>
-        <p className="text-gray-400">El Salvador</p>
-      </div>
-    </div>
-
-    {/* ICONOS DE TECNOLOGÍAS*/}
-    <div className="mt-8">
-      <p className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-4 text-center lg:text-left">
-        Stack Tecnológico Principal
-      </p>
-  
-  {/* Contenedor de iconos con Hover dinámico */}
-  <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-4xl text-gray-400">
-    
-    {/* PHP & LARAVEL (Tus fuertes en Backend) */}
-    <i title="PHP" className='bx bxl-php hover:text-[#777BB4] transition-all duration-300 hover:scale-110'></i>
-
-    {/* JAVASCRIPT & REACT */}
-    <i title="JavaScript" className='bx bxl-javascript hover:text-[#F7DF1E] transition-all duration-300 hover:scale-110'></i>
-    <i title="React" className='bx bxl-react hover:text-[#61DAFB] transition-all duration-300 hover:scale-110'></i>
-    
-    {/* MOBILE (Flutter, Dart, Java) */}
-    <i title="Flutter" className='bx bxl-flutter hover:text-[#02569B] transition-all duration-300 hover:scale-110'></i>
-    {/* Nota: Boxicons a veces no tiene el logo de Dart exacto, muchos usan bxl-google o bxl-flutter alternativo */}
-    <i title="Java" className='bx bxl-java hover:text-[#ED8B00] transition-all duration-300 hover:scale-110'></i>
-        
-    {/* DATABASE */}
-    <i title="Firebase" className='bx bxl-firebase hover:text-[#FFCA28] transition-all duration-300 hover:scale-110'></i>
-  </div>
-</div>
-  </div>
-</section>
-      {/* EXPERIENCIA */}
-      <section className=" py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-
-          {/* Web */}
-          <div className="p-6 border border-gray-300 rounded-lg
-                hover:border-[#DE3642]
-                hover:shadow-[0_0_20px_rgba(222,54,66,0.6)]
-                hover:scale-105
-                transition-all duration-300">
-            <h4 className="text-xl font-bold mb-3">Desarrollo Web</h4>
-            <p className="mb-4">
-              Creación de sitios y sistemas web completos.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-            {webSkills.map((skill, index) => (
-                <div
-                key={index}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 
-                  transition-all duration-300 group
-                  hover:border-[#DE3642] hover:shadow-[0_0_15px_rgba(222,54,66,0.3)]
-                  ${skill.hoverColor}`}
-                >
-                <span className="text-xl">
-                    {skill.icon}
-                </span>
-                <span className="text-sm font-medium">
-                    {skill.name}
-                </span>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10">
+                <div className="flex items-center gap-2 text-gray-400 bg-white/5 px-4 py-2 rounded-xl">
+                  <FaGraduationCap className="text-[#DE3642]" />
+                  <span className="text-sm">Ciencias de la Computación (5to año)</span>
                 </div>
-            ))}
-            </div>
-          </div>
-
-          {/* Móvil */}
-          <div className="p-6 border border-gray-300 rounded-lg
-                hover:border-[#DE3642]
-                hover:shadow-[0_0_20px_rgba(222,54,66,0.6)]
-                hover:scale-105
-                transition-all duration-300">
-            <h4 className="text-xl font-bold mb-3">Desarrollo Móvil</h4>
-            <p className="mb-4">
-              Desarrollo de apps móviles modernas.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-            {mobileSkills.map((skill, index) => (
-                <div
-                key={index}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 
-                  transition-all duration-300 group
-                  hover:border-[#DE3642] hover:shadow-[0_0_15px_rgba(222,54,66,0.3)]
-                  ${skill.hoverColor}`}
-                >
-                <span className="text-xl">
-                    {skill.icon}
-                </span>
-                <span className="text-sm font-medium">
-                    {skill.name}
-                </span>
+                <div className="flex items-center gap-2 text-gray-400 bg-white/5 px-4 py-2 rounded-xl">
+                  <FaMapMarkerAlt className="text-[#DE3642]" />
+                  <span className="text-sm">El Salvador</span>
                 </div>
-            ))}
-            </div>
-          </div>
+              </div>
 
-          {/* Frameworks */}
-          <div className="p-6 border border-gray-300 rounded-lg
-                hover:border-[#DE3642]
-                hover:shadow-[0_0_20px_rgba(222,54,66,0.6)]
-                hover:scale-105
-                transition-all duration-300">
-            <h4 className="text-xl font-bold mb-3">Frameworks</h4>
-            <p className="mb-4">
-              Trabajo con frameworks modernos.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-            {frameworks.map((fw, index) => (
-                <div
-                key={index}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 
-                  transition-all duration-300 group
-                  hover:border-[#DE3642] hover:shadow-[0_0_15px_rgba(222,54,66,0.3)]
-                  ${fw.hoverColor}`}
-                >
-                <span className="text-xl">
-                    {fw.icon}
-                </span>
-                <span className="text-sm font-medium">
-                    {fw.name}
-                </span>
-                </div>
-            ))}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <a href="/CV/CV_Cristian_Parada.pdf" download className='group flex items-center gap-3 bg-[#DE3642] px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(222,54,66,0.3)]'>
+                  <span className="font-black uppercase tracking-widest text-sm">Descargar CV</span>
+                </a>
+                <a href="https://cristianparadalopez.github.io/Portafolio/" target="_blank" className='group flex items-center gap-3 bg-white/5 border border-white/10 px-8 py-4 rounded-2xl hover:border-[#DE3642]/50 transition-all duration-300'>
+                  <span className="font-black uppercase tracking-widest text-sm text-white">Ver Portafolio Web</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN PROYECTOS MIXTOS */}
-      <section id="proyectos" className="py-20 px-6 ">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 font-[Rubik_Dirt] text-center italic">
-            Mis proyectos recientes
-          </h2>
+      {/* INFINITE SKILLS SCROLL */}
+      <section className="py-10 bg-[#050505] border-y border-white/5">
+      <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">Stack Tecnológico</h2>
+            <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
+          </div>
+        <div className="w-full overflow-hidden relative">
+          <div className="flex w-max flex-nowrap animate-infinite-scroll py-4 whitespace-nowrap">
+            {[...fullStackItems, ...fullStackItems].map((tech, index) => (
+              <div key={index} className="flex items-center gap-4 mx-12 group transition-all">
+                <span className={`text-5xl text-gray-600 transition-colors duration-300 ${tech.color}`}>
+                  {tech.icon}
+                </span>
+                <span className="text-4xl font-black text-white/10 uppercase tracking-tighter group-hover:text-white/40 transition-colors">
+                  {tech.nombre}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-24 px-6 relative">
+  {/* Decoración de fondo sutil */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(222,54,66,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-          {/* GRILLA WEB */}
+  <div className=" max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      {[
+        { 
+          title: "Desarrollo Web", 
+          desc: "Sistemas integrales con arquitecturas escalables y alto rendimiento.",
+          skills: webSkills, 
+          icon: "bx-code-block",
+          accent: "from-[#DE3642]/20 to-transparent"
+        },
+        { 
+          title: "Desarrollo Móvil", 
+          desc: "Apps nativas e híbridas enfocadas en una experiencia de usuario fluida.",
+          skills: mobileSkills, 
+          icon: "bx-mobile-vibration",
+          accent: "from-blue-500/10 to-transparent"
+        },
+        { 
+          title: "Ecosistema & Logic", 
+          desc: "Dominio de frameworks modernos para soluciones backend y frontend.",
+          skills: frameworks, 
+          icon: "bx-desktop", 
+          accent: "from-purple-500/10 to-transparent"
+        }
+      ].map((category, idx) => (
+        <motion.div
+          key={idx}
+          whileHover={{ y: -12 }}
+          className=" card-animada relative group p-8 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:border-[#DE3642]/40 transition-all duration-500 overflow-hidden"
+        >
+          {/* Resplandor interno al hacer hover */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${category.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+
+          <div className="relative z-10">
+            {/* Icono de Categoría */}
+            <div className="w-16 h-16 rounded-2xl bg-[#DE3642]/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#DE3642] transition-all duration-500">
+              <i className={`bx ${category.icon} text-3xl text-[#DE3642] group-hover:text-white`}></i>
+            </div>
+
+            <h4 className="text-2xl font-black text-white mb-4 uppercase tracking-tighter italic">
+              {category.title}
+            </h4>
+            
+            <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+              {category.desc}
+            </p>
+
+            {/* Píldoras de Skills */}
+            <div className="flex flex-wrap justify-start gap-3">
+              {category.skills.map((skill, i) => (
+                <div
+                  key={i}
+                  className={` flex items-center gap-2 px-4 py-2 rounded-xl bg-black/40 border border-white/5 
+                  transition-all duration-300 group/skill hover:border-[#DE3642]/50 hover:bg-black/60 shadow-lg`}
+                >
+                  <span className={`text-lg text-gray-400 transition-colors duration-300 ${skill.hoverColor.replace('hover:', 'group-hover/skill:')}`}>
+                    {skill.icon}
+                  </span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gray-500 group-hover/skill:text-white transition-colors">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+
+    </div>
+  </div>
+</section>
+
+      {/* PROYECTOS SECTION */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <div>
+              <h2 className="text-5xl font-black text-white italic uppercase tracking-tighter">Sistemas Realizados</h2>
+              <div className="w-24 h-2 bg-[#DE3642] mt-4"></div>
+            </div>
+            <p className="text-gray-500 max-w-md">Una selección de aplicaciones web y móviles desarrolladas con arquitectura escalable.</p>
+          </div>
+
+          {/* Web Projects */}
           <div className="mb-20">
             <h3 className="text-xl font-bold mb-8 flex items-center gap-2 justify-center">
               <i className='bx bx-laptop text-[#DE3642]'></i> Sistemas & Web
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {proyectosWeb.map((proyecto, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500">
+                <div key={index} className="card-animada group relative overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-2xl transition-all duration-500">
                   <div className="h-56 overflow-hidden">
                     <img 
                       src={proyecto.img} 
@@ -336,27 +313,23 @@ const frameworks = [
             </div>
           </div>
 
-          {/* GRILLA MÓVIL */}
-          <div className="flex flex-col items-center justify-center w-full">
-            <h3 className="text-xl font-bold mb-8 flex items-center justify-center gap-2">
-              <i className='bx bx-mobile-alt text-[#DE3642]'></i> Aplicaciones Móviles
+          {/* Mobile Showcase */}
+          <div className="bg-[#050505] rounded-[3rem] p-12 border border-white/5">
+            <h3 className="text-2xl font-bold text-white mb-12 flex items-center gap-3">
+              <FaMobileAlt className="text-[#DE3642]" /> Mobile Apps Showcase
             </h3>
-            <div className="flex flex-wrap justify-center gap-10 w-full max-w-6xl">
+            <div className="flex flex-wrap justify-center gap-16">
               {proyectosMoviles.map((app, index) => (
-                <div 
-                  key={index} 
-                  className="group relative w-[240px] h-[480px] bg-[#1a1a1a] rounded-[2.5rem] border-[6px] border-[#2a2a2a] shadow-2xl overflow-hidden transition-transform duration-300 hover:-translate-y-4">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[#2a2a2a] rounded-b-xl z-20"></div>
-                  <img
-                    src={app.img} 
-                    alt={app.titulo} 
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" 
-                  />
-                  <div className="absolute inset-0 bg-[#DE3642]/80 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h4 className="text-white font-bold text-lg mb-4">{app.titulo}</h4>
-                    <a href={app.link} className="bg-white text-black p-3 rounded-full text-xl shadow-lg">
-                      <i className='bx bx-link-external'></i>
-                    </a>
+                <div key={index} className="relative group">
+                  <div className="w-[280px] h-[560px] bg-[#111] rounded-[3rem] border-[8px] border-[#1a1a1a] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] group-hover:shadow-[#DE3642]/20 group-hover:border-[#DE3642]/30 transition-all duration-500">
+                    <img src={app.img} alt={app.titulo} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center p-8 text-center">
+                      <h4 className="text-2xl font-bold text-white mb-4">{app.titulo}</h4>
+                      <p className="text-gray-400 text-sm mb-8">{app.desc}</p>
+                      <a href={app.link} className="bg-[#DE3642] text-white p-4 rounded-full hover:scale-110 transition-transform shadow-lg">
+                        <FaGithub size={24} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -365,89 +338,61 @@ const frameworks = [
         </div>
       </section>
 
-      {/* CONTACTO */}
-      <section id="contacto" className="py-20 px-6 bg-[#0f0f1a] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#DE3642]/20 blur-[120px] rounded-full"></div>
-
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 font-[Rubik_Dirt] text-white">¡Hablemos!</h2>
-            <p className="text-gray-400">¿Tienes un proyecto en mente? Envíame un mensaje directo.</p>
+      {/* CONTACT SECTION */}
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#111] to-black rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-12 opacity-5">
+             <i className='bx bx-paint-roll text-[180px] text-[#DE3642]'></i>
           </div>
+          
+          <div className="relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4 italic uppercase tracking-tighter">¿Hablamos?</h2>
+              <p className="text-gray-400">¿Interesado en mi trabajo? ¡Envíame un mensaje!</p>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 sm:p-10 rounded-3xl shadow-2xl"
-          >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
                   type="text"
-                  name="name"
                   placeholder="Tu nombre"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   required
-                  className="p-4 rounded-xl bg-black/40 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
+                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
                 <input
                   type="email"
-                  name="email"
                   placeholder="Tu correo"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
                   required
-                  className="p-4 rounded-xl bg-black/40 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
+                  className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
               </div>
-
               <textarea
-                name="message"
-                placeholder="¿En qué puedo ayudarte?"
-                rows="5"
+                placeholder="Cuéntame sobre tu idea..."
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
                 required
-                className="p-4 rounded-xl bg-black/40 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
+                rows="4"
+                className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all resize-none"
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-[#DE3642] py-4 rounded-xl text-white font-bold hover:bg-[#c12e38] transition-all flex items-center justify-center gap-2 group disabled:opacity-50"
+                className="w-full bg-[#DE3642] py-5 rounded-2xl text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(222,54,66,0.3)] transition-all flex items-center justify-center gap-3 disabled:opacity-50"
               >
-                {loading ? (
-                  "Enviando..."
-                ) : (
-                  <>
-                    Enviar Mensaje 
-                    <i className='bx bx-send group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform'></i>
-                  </>
-                )}
+                {loading ? "Enviando..." : <>Enviar Mensaje <i className='bx bx-paper-plane'></i></>}
               </button>
-
-              <AnimatePresence>
-                {success && (
-                  <motion.p
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="text-green-400 text-center font-medium mt-2"
-                  >
-                    ✅ ¡Mensaje enviado con éxito! Te responderé pronto.
-                  </motion.p>
-                )}
-              </AnimatePresence>
+              {success && <p className="text-green-400 text-center font-bold">✅ ¡Mensaje enviado con éxito!</p>}
             </form>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* FOOTER */}
       <Footer />
-
     </div>
   );
 };
