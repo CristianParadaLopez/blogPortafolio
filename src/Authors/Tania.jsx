@@ -20,9 +20,8 @@ const Tania = () => {
 
   if (!tania) return <div className="text-white text-center py-20">Autor no encontrado</div>;
 
-  // Proyectos enfocados a Tania
   const proyectosTania = [
-        { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "SportHub", desc: "Plataforma de inventario de articulos de deportes" },
+    { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "SportHub", desc: "Plataforma de inventario de articulos de deportes" },
     { img: "/authors/luis/proyectos/proyecto10.png", link: "#", titulo: "App Móvil", desc: "App de habitos saludables" },
   ];
 
@@ -42,7 +41,6 @@ const Tania = () => {
       });
   };
 
-  // Stack de Hardware, Mecatrónica y Software para Tania
   const techStack = [
     { nombre: "Tkinter", icon: "bxl-python", color: "hover:text-[#3776AB]" },
     { nombre: "Arduino", icon: "bx-chip", color: "hover:text-[#00979D]" },
@@ -57,14 +55,14 @@ const Tania = () => {
 
   return (
     <div className="bg-black text-gray-200 min-h-screen selection:bg-[#DE3642] selection:text-white">
-      
-      {/* HERO SECTION */}
+
+      {/* HERO */}
       <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            
-            {/* Perfil con efecto Mecatrónico */}
-            <motion.div 
+
+            {/* Perfil */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="relative group contenedor-circular-animado"
@@ -82,16 +80,16 @@ const Tania = () => {
               </a>
             </motion.div>
 
-            {/* Info Tania */}
+            {/* Info */}
             <div className="flex-1 text-center lg:text-left">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="inline-block px-4 py-1 rounded-full border border-[#DE3642]/40 text-[#DE3642] text-sm font-medium mb-4 uppercase tracking-widest"
               >
                 Mecatrónica & Full Stack Developer
               </motion.span>
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -102,7 +100,7 @@ const Tania = () => {
               <p className="text-lg text-gray-400 max-w-2xl mb-8 leading-relaxed">
                 {tania.about} Especializada en la integración de software con hardware, creando soluciones robustas desde el circuito hasta la interfaz web.
               </p>
-              
+
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10">
                 <div className="flex items-center gap-2 text-gray-300 bg-white/5 px-4 py-2 rounded-lg">
                   <FaGraduationCap className="text-[#DE3642]" />
@@ -115,12 +113,12 @@ const Tania = () => {
               </div>
 
               <div className="flex justify-center lg:justify-start">
-                <a 
+                <a
                   href="/CV/CV_Taniaa.pdf"
-                  download="CV_Taniaa.pdf" 
+                  download="CV_Taniaa.pdf"
                   className='group flex items-center gap-3 bg-white/5 border border-white/10 px-8 py-4 rounded-2xl hover:bg-[#DE3642] hover:border-[#DE3642] transition-all duration-300 shadow-xl'
                 >
-                  <i className="bx bxs-file-pdf text-xl group-hover:animate-bounce"></i> 
+                  <i className="bx bxs-file-pdf text-xl group-hover:animate-bounce"></i>
                   <span className="font-bold uppercase tracking-widest text-sm text-white">Descargar CV</span>
                 </a>
               </div>
@@ -129,7 +127,7 @@ const Tania = () => {
         </div>
       </section>
 
-      {/* TECH SCROLL - Hardware & Software */}
+      {/* Skills */}
       <section className="py-2 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -139,7 +137,7 @@ const Tania = () => {
 
           <div className="w-full overflow-hidden mb-20 mt-10 relative">
             <div className="absolute inset-0 z-10 pointer-events-none [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"></div>
-            
+
             <div className="flex w-max flex-nowrap">
               <div className="flex items-center animate-infinite-scroll py-4 whitespace-nowrap">
                 {[...techStack, ...techStack].map((tech, index) => (
@@ -154,23 +152,22 @@ const Tania = () => {
             </div>
           </div>
 
-          {/* Grid de Especialidades */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { 
-                title: "Hardware & Robótica", 
-                skills: ["Arduino", "Sistemas Embebidos", "Sensores", "Tkinter GUI", "Circuitos"], 
-                icon: "bx-chip" 
+              {
+                title: "Hardware & Robótica",
+                skills: ["Arduino", "Sistemas Embebidos", "Sensores", "Tkinter GUI", "Circuitos"],
+                icon: "bx-chip"
               },
-              { 
-                title: "Desarrollo Web", 
-                skills: ["React", "PHP", "Laravel", "JavaScript", "Tailwind CSS"], 
-                icon: "bx-code-alt" 
+              {
+                title: "Desarrollo Web",
+                skills: ["React", "PHP", "Laravel", "JavaScript", "Tailwind CSS"],
+                icon: "bx-code-alt"
               },
-              { 
-                title: "Mobile Development", 
-                skills: ["Flutter", "Dart", "Kotlin", "Firebase", "API Integration"], 
-                icon: "bx-mobile-alt" 
+              {
+                title: "Mobile Development",
+                skills: ["Flutter", "Dart", "Kotlin", "Firebase", "API Integration"],
+                icon: "bx-mobile-alt"
               }
             ].map((item, idx) => (
               <motion.div whileHover={{ y: -5 }} key={idx} className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#DE3642]/30 transition-all">
@@ -197,29 +194,29 @@ const Tania = () => {
             <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {proyectosTania.map((proyecto, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-white/5 h-[400px]">
-                  <img src={proyecto.img} alt={proyecto.titulo} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <h6 className="text-white font-bold text-2xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{proyecto.titulo}</h6>
-                    <p className="text-gray-300 text-sm mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{proyecto.desc}</p>
-                    <a href={proyecto.link} className="inline-block w-max bg-[#DE3642] text-white px-8 py-3 rounded-full text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                      Ver Detalles <i className='bx bx-right-arrow-alt ml-2'></i>
-                    </a>
-                  </div>
+            {proyectosTania.map((proyecto, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-[2.5rem] bg-white border border-white/5 h-[400px]">
+                <img src={proyecto.img} alt={proyecto.titulo} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                  <h6 className="text-white font-bold text-2xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{proyecto.titulo}</h6>
+                  <p className="text-gray-300 text-sm mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{proyecto.desc}</p>
+                  <a href={proyecto.link} className="inline-block w-max bg-[#DE3642] text-white px-8 py-3 rounded-full text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                    Ver Detalles <i className='bx bx-right-arrow-alt ml-2'></i>
+                  </a>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACTO */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#111] to-black rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-12 opacity-5">
-             <i className='bx bx-chip text-[180px] text-[#DE3642]'></i>
+            <i className='bx bx-chip text-[180px] text-[#DE3642]'></i>
           </div>
-          
+
           <div className="relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4 italic uppercase tracking-tighter">¿Trabajamos juntos?</h2>
@@ -232,7 +229,7 @@ const Tania = () => {
                   type="text"
                   placeholder="Tu nombre"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -240,7 +237,7 @@ const Tania = () => {
                   type="email"
                   placeholder="Tu correo"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -248,7 +245,7 @@ const Tania = () => {
               <textarea
                 placeholder="Explícame tu idea técnica o requerimientos..."
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows="4"
                 className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all resize-none"

@@ -37,11 +37,11 @@ const Contact = () => {
     setLoading(true);
 
     emailjs.send(
-        "service_lv0sqre",
-        "template_75cpuzc",
-        { ...formData, to_email: selectedAuthor.email, to_name: selectedAuthor.name },
-        "tsS_zRPGc6SdgkNoL"
-      )
+      "service_lv0sqre",
+      "template_75cpuzc",
+      { ...formData, to_email: selectedAuthor.email, to_name: selectedAuthor.name },
+      "tsS_zRPGc6SdgkNoL"
+    )
       .then(() => {
         setSuccess(true);
         setLoading(false);
@@ -66,9 +66,8 @@ const Contact = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               className="w-full flex flex-col items-center"
             >
-              {/* TÍTULO CORREGIDO (Sin cortes) */}
               <div className="max-w-4xl w-full px-4 mb-12 sm:mb-20">
-                <motion.h1 
+                <motion.h1
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   className="text-3xl md:text-5xl lg:text-6xl font-bold text-center py-4 leading-tight bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent"
@@ -77,18 +76,15 @@ const Contact = () => {
                 </motion.h1>
               </div>
 
-              {/* CONTENEDOR DE ÓRBITA RE-CENTRADO */}
               <div className="relative w-full flex items-center justify-center min-h-[400px] sm:min-h-[500px]">
-                
-                {/* Círculo guía visual */}
+
                 <div className="absolute w-[240px] h-[240px] sm:w-[360px] sm:h-[360px] border border-white/5 rounded-full z-0" />
 
                 {authors.map((author, index) => {
                   const angle = (index / authors.length) * 2 * Math.PI + (rotation * Math.PI) / 180;
-                  
-                  // Radio responsive ajustado para que no se salga en móviles
+
                   const radius = typeof window !== 'undefined' && window.innerWidth < 640 ? 120 : 180;
-                  
+
                   const x = Math.cos(angle) * radius;
                   const y = Math.sin(angle) * radius;
 
@@ -97,13 +93,13 @@ const Contact = () => {
                       key={author.id}
                       onClick={() => setSelectedAuthor(author)}
                       className="absolute cursor-pointer z-20"
-                      style={{ 
+                      style={{
                         left: '50%',
                         top: '50%',
-                        x: x, 
-                        y: y, 
-                        translateX: "-50%", 
-                        translateY: "-50%" 
+                        x: x,
+                        y: y,
+                        translateX: "-50%",
+                        translateY: "-50%"
                       }}
                       whileHover={{ scale: 1.15 }}
                     >
@@ -123,10 +119,9 @@ const Contact = () => {
                   );
                 })}
 
-                {/* NÚCLEO CENTRAL (Icono Correo) */}
                 <div className="relative flex items-center justify-center z-10">
                   <div className="absolute w-20 h-20 sm:w-32 sm:h-32 bg-[#DE3642]/10 blur-[50px] rounded-full" />
-                  <motion.div 
+                  <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                     className="text-[#DE3642] text-3xl sm:text-4xl"
@@ -137,7 +132,6 @@ const Contact = () => {
               </div>
             </motion.div>
           ) : (
-            /* FORMULARIO (Se mantiene igual, ya funcionaba bien) */
             <motion.div
               key="form-step"
               initial={{ opacity: 0, x: 50 }}
@@ -213,8 +207,8 @@ const Contact = () => {
                 </button>
 
                 {success && (
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }} 
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl text-green-400 text-center text-sm"
                   >

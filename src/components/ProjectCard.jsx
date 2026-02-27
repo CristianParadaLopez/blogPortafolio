@@ -1,4 +1,3 @@
-// components/ProjectCard.jsx
 export const ProjectCard = ({ project }) => {
   return (
     <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all">

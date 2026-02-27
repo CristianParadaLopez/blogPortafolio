@@ -5,7 +5,6 @@ const PostCard = ({ title, excerpt, image, author, authorSlug, category, slug, d
   return (
     <article className="group bg-[#0a0a0a] border border-white/5 rounded-3xl overflow-hidden hover:border-[#DE3642]/50 transition-all duration-500 flex flex-col shadow-xl">
       <div className="relative h-60 overflow-hidden">
-    {/* Link en la categoría para ir directo a la sección */}
     <Link 
       to={`/categorias/${category}`} 
       className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md text-[#DE3642] text-[10px] font-bold px-3 py-1 rounded-full border border-[#DE3642]/30 hover:bg-[#DE3642] hover:text-white transition-colors"

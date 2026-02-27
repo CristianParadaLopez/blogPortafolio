@@ -37,35 +37,30 @@
 
 .card-animada {
     position: relative;
-    /* Evitamos que el resplandor se corte, pero mantenemos la forma */
     overflow: hidden; 
 }
 
 .card-animada:hover::before {
     content: '';
     position: absolute;
-    width: 8px; /* Un poco más grande para que se note el rastro */
+    width: 8px; 
     height: 8px;
     border-radius: 50%;
     background: #DE3642;
     z-index: 50;
-    /* Resplandor más intenso para que "manche" el borde */
     box-shadow: 
         0px 0px 15px 4px rgba(222, 54, 66, 0.8), 
         0px 0px 30px 8px rgba(222, 54, 66, 0.8);
-    /* Animación lineal pura */
     animation: bord 4s linear infinite;
     pointer-events: none; 
 }
 
-/* Para los circulos */
 /* Animación para trayectoria circular */
 @keyframes girar-circular {
     from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
     to { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
 }
 
-/* Para pantallas más grandes (ajuste de radio) */
 @media (min-width: 1024px) {
     @keyframes girar-circular {
         from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
@@ -91,7 +86,6 @@
     box-shadow: 
         0px 0px 20px 6px rgba(222, 54, 66, 0.9), 
         0px 0px 40px 12px rgba(222, 54, 66, 0.6);
-    /* Aplicamos la animación circular */
     animation: girar-circular 4s linear infinite;
     pointer-events: none;
 }

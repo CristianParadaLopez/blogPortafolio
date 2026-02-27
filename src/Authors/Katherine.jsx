@@ -21,7 +21,7 @@ const Katherine = () => {
   if (!katherine) return <div className="text-white text-center py-20">Autor no encontrado</div>;
 
   const proyectosWeb = [
-        { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "SportHub", desc: "Plataforma de inventario de articulos de deportes" },
+    { img: "/authors/luis/proyectos/proyecto9.png", link: "#", titulo: "SportHub", desc: "Plataforma de inventario de articulos de deportes" },
     { img: "/authors/luis/proyectos/proyecto10.png", link: "#", titulo: "App Móvil", desc: "App de habitos saludables" },
   ];
 
@@ -41,7 +41,7 @@ const Katherine = () => {
       });
   };
 
-  // Stack de Infraestructura, Redes y Backend
+  // Stack
   const infraStack = [
     { nombre: "Proxmox", icon: "bx-server", color: "hover:text-[#E57024]" },
     { nombre: "Linux/Ubuntu", icon: "bxl-tux", color: "hover:text-[#FCC624]" },
@@ -55,14 +55,14 @@ const Katherine = () => {
 
   return (
     <div className="bg-black text-gray-200 min-h-screen selection:bg-[#DE3642] selection:text-white">
-      
-      {/* HERO SECTION */}
+
+      {/* HERO */}
       <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            
+
             {/* Perfil */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="relative group contenedor-circular-animado"
@@ -82,14 +82,14 @@ const Katherine = () => {
 
             {/* Info */}
             <div className="flex-1 text-center lg:text-left">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="inline-block px-4 py-1 rounded-full border border-[#DE3642]/40 text-[#DE3642] text-sm font-medium mb-4 uppercase tracking-widest"
               >
                 Backend & Network Infrastructure
               </motion.span>
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
@@ -100,7 +100,7 @@ const Katherine = () => {
               <p className="text-lg text-gray-400 max-w-2xl mb-8 leading-relaxed">
                 {katherine.about} Enfocada en la administración de servidores, virtualización con Proxmox y el despliegue de infraestructuras de red seguras.
               </p>
-              
+
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-10">
                 <div className="flex items-center gap-2 text-gray-300">
                   <FaGraduationCap className="text-[#DE3642]" />
@@ -114,9 +114,9 @@ const Katherine = () => {
 
               <div className="flex justify-center lg:justify-start">
                 <div className="flex gap-4">
-                    <span className="px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs font-bold uppercase tracking-widest text-white italic">
-                        Infraestructura & Código
-                    </span>
+                  <span className="px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs font-bold uppercase tracking-widest text-white italic">
+                    Infraestructura & Código
+                  </span>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ const Katherine = () => {
         </div>
       </section>
 
-      {/* INFRA SCROLL */}
+      {/* Skills */}
       <section className="py-2 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -134,7 +134,7 @@ const Katherine = () => {
 
           <div className="w-full overflow-hidden mb-20 mt-10 relative">
             <div className="absolute inset-0 z-10 pointer-events-none [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"></div>
-            
+
             <div className="flex w-max flex-nowrap">
               <div className="flex items-center animate-infinite-scroll py-4 whitespace-nowrap">
                 {[...infraStack, ...infraStack].map((tech, index) => (
@@ -152,8 +152,8 @@ const Katherine = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { title: "Servidores & OS", skills: ["Proxmox", "Linux Ubuntu", "Debian"], icon: "bx-server" },
-              { title: "Networking", skills: ["Packet Tracer","VLANs", "Subnetting"], icon: "bx-network-chart" },
-              { title: "Backend Dev", skills: [ "Laravel", "PHP", "MySQL", "Firebase"], icon: "bx-terminal" }
+              { title: "Networking", skills: ["Packet Tracer", "VLANs", "Subnetting"], icon: "bx-network-chart" },
+              { title: "Backend Dev", skills: ["Laravel", "PHP", "MySQL", "Firebase"], icon: "bx-terminal" }
             ].map((item, idx) => (
               <motion.div whileHover={{ y: -5 }} key={idx} className="p-8 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#DE3642]/30 transition-all">
                 <i className={`bx ${item.icon} text-4xl text-[#DE3642] mb-6`}></i>
@@ -179,29 +179,29 @@ const Katherine = () => {
             <div className="w-20 h-1 bg-[#DE3642] mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {proyectosWeb.map((proyecto, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-white/5 h-[400px]">
-                  <img src={proyecto.img} alt={proyecto.titulo} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
-                    <h6 className="text-white font-bold text-2xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{proyecto.titulo}</h6>
-                    <p className="text-gray-300 text-sm mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{proyecto.desc}</p>
-                    <a href={proyecto.link} className="inline-block w-max bg-[#DE3642] text-white px-8 py-3 rounded-full text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                      Ver Detalles <i className='bx bx-right-arrow-alt ml-2'></i>
-                    </a>
-                  </div>
+            {proyectosWeb.map((proyecto, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-md hover:shadow-2xl transition-all duration-500 border border-white/5 h-[400px]">
+                <img src={proyecto.img} alt={proyecto.titulo} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-10">
+                  <h6 className="text-white font-bold text-2xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{proyecto.titulo}</h6>
+                  <p className="text-gray-300 text-sm mb-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{proyecto.desc}</p>
+                  <a href={proyecto.link} className="inline-block w-max bg-[#DE3642] text-white px-8 py-3 rounded-full text-sm font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                    Ver Detalles <i className='bx bx-right-arrow-alt ml-2'></i>
+                  </a>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACTO */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto bg-gradient-to-b from-[#111] to-black rounded-[3rem] p-8 md:p-16 border border-white/5 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 p-12 opacity-5">
-             <i className='bx bx-network-chart text-[180px] text-[#DE3642]'></i>
+            <i className='bx bx-network-chart text-[180px] text-[#DE3642]'></i>
           </div>
-          
+
           <div className="relative z-10">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4 italic uppercase tracking-tighter">Contacto</h2>
@@ -214,7 +214,7 @@ const Katherine = () => {
                   type="text"
                   placeholder="Tu nombre"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -222,7 +222,7 @@ const Katherine = () => {
                   type="email"
                   placeholder="Tu correo"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                   className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all"
                 />
@@ -230,7 +230,7 @@ const Katherine = () => {
               <textarea
                 placeholder="Detalla tu proyecto o consulta técnica..."
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows="4"
                 className="w-full p-5 rounded-2xl bg-white/5 border border-white/10 text-white focus:border-[#DE3642] outline-none transition-all resize-none"
