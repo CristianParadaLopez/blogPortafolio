@@ -71,8 +71,8 @@ const Katherine = () => {
       "template_75cpuzc",
       {
         ...formData,
-        to_email: "eu.martinez.127@gmail.com",
-        to_name: "Eunice"
+        to_email: "katherinealexandra2018@gmail.com",
+        to_name: "Katherine"
       },
       "tsS_zRPGc6SdgkNoL"
     )
@@ -108,6 +108,17 @@ const Katherine = () => {
           <h3 className="text-xl text-[#DE3642] font-semibold">
             Desarrolladora Web & Mobile Apps
           </h3>
+
+          <a 
+        href="https://github.com/ViviLeech" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
+        title="Visitar mi GitHub"
+      >
+        <i className='bx bxl-github'></i>
+      </a>
+
         </div>
 
         {/* SOBRE MÍ */}

@@ -100,16 +100,16 @@ const authors = [
   },
   {
     slug: "katherine",
-    name: "Katherine Martínez",
+    name: "Katherine Hernandez",
     role: "Backend Developer",
     image: "/authors/katherine/katherine.jpg",
     about:
       "Desarrollador Full Stack con experiencia en aplicaciones web y móviles. Apasionado por React, Flutter y la Inteligencia Artificial.",
 
     contact: {
-      phone: "6430-4967",
-      email: "cristianparadalopez@gmail.com",
-      github: "https://github.com/CristianParadaLopez"
+      phone: "6928 7096",
+      email: "katherinealexandra2018@gmail.com",
+      github: "https://github.com/ViviLeech"
     },
 
     skills: {
