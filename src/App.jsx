@@ -1,45 +1,52 @@
-import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect, Suspense, lazy } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Post from "./pages/Post";
-import Author from "./pages/Author";
-
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import Category from "./pages/Category";
-import Contact from "./pages/Contact";
+import InteractiveBackground from "./components/InteractiveBackground";
+
+// Lazy Loading
+const Home = lazy(() => import("./pages/Home"));
+const Post = lazy(() => import("./pages/Post"));
+const Author = lazy(() => import("./pages/Author"));
+const Category = lazy(() => import("./pages/Category"));
+const Contact = lazy(() => import("./pages/Contact"));
+
+const PageLoader = () => (
+  <div className="h-screen w-full flex items-center justify-center bg-black">
+    <div className="w-10 h-10 border-4 border-[#DE3642] border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 export default function App() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
   useEffect(() => {
-    AOS.init({
-      duration: 10,
-      once: true,
-    });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
-    <main className="bg-black text-white overflow-hidden">
-
-      {/* Fondo */}
-      <img
-        className="absolute top-0 right-0 opacity-60 -z-10"
-        src="/gradient.png"
-        alt="Gradient-img"
-      />
-
-      <div className="h-0 w-[40rem] absolute top-[20%] right-[-5%] shadow-[0_0_900px_20px_#DE3642] -rotate-[30deg] -z-10"></div>
-
+    <main className="bg-black text-white min-h-screen relative overflow-x-hidden">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/categorias/:categoryName" element={<Category />} />
-        <Route path="/blog/:slug" element={<Post />} />
-        <Route path="/autor/:authorSlug" element={<Author />} />
-        <Route path="/contacto" element={<Contact />} />
-      </Routes>
+      {/* FONDO INTERACTIVO GLOBAL */}
+      {/* Se mantiene visible en Home, pero z-0 permite que el texto z-10 esté encima */}
+      <div className={`fixed inset-0 transition-opacity duration-1000 z-0 ${isHome ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+        <InteractiveBackground />
+      </div>
 
+      <div className="relative z-10 pt-20 md:pt-28">
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/categorias/:categoryName" element={<Category />} />
+            <Route path="/blog/:slug" element={<Post />} />
+            <Route path="/autor/:authorSlug" element={<Author />} />
+            <Route path="/contacto" element={<Contact />} />
+          </Routes>
+        </Suspense>
+      </div>
     </main>
   );
 }

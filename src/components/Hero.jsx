@@ -1,50 +1,29 @@
-import 'boxicons/css/boxicons.min.css';
-import Spline from '@splinetool/react-spline';
-
 const Hero = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row items-center justify-between min-h-screen overflow-hidden">
-
-      {/* MODELO 3D */}
-      <div className="
-        w-full 
-        h-[350px] 
-        sm:h-[400px] 
-        lg:h-auto 
-        lg:w-1/2 
-        lg:absolute 
-        lg:right-0 
-        lg:top-0
-      ">
-        <Spline scene="https://prod.spline.design/I32lPxOxVLUBBrqn/scene.splinecode"
-          className="w-full h-full"
-        />
-      </div>
-
-      {/* TEXTO */}
-      <div
-        data-aos="fade-right"
-        className="
-          max-w-xl 
-          ml-[5%] 
-          z-10 
-          mt-10 
-          lg:mt-0
-        "
-      >
-        {/* Caja */}
-
-        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wider my-8'>
-          BLOG<br /> Portafolio
+    <section className="relative flex items-center justify-center min-h-[80vh] lg:min-h-[90vh] overflow-hidden px-6 text-center">
+      
+      {/* CONTENIDO CENTRADO */}
+      <div data-aos="fade-up" className="max-w-4xl z-20 relative">
+        <span className="text-[#DE3642] font-bold tracking-[0.5em] text-xs sm:text-sm uppercase mb-4 block">
+          Proyecto Grupal de Computación
+        </span>
+        
+        <h1 className='text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter my-6 leading-none'>
+          BLOG<span className="text-[#DE3642]">.</span><br /> 
+          <span className="text-gray-400 opacity-80">PORTAFOLIO</span>
         </h1>
-
-        <p className='text-base sm:text-lg tracking-wider text-gray-400 max-w-[30rem]'>
-          Bienvenidos a nuestro blog/portafolio, un espacio donde compartimos conocimientos, experiencias y proyectos relacionados con el desarrollo web y la tecnología. Aquí encontrarás artículos, tutoriales y recursos para inspirarte y ayudarte en tu camino como desarrollador.
+        
+        <p className='text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-12'>
+          Explora la intersección entre la creatividad humana y la Inteligencia Artificial. 
+          Artículos, código y la visión de futuro de nuestro equipo de desarrollo.
         </p>
-
-        <div className='flex gap-4 mt-12'>
-          <a href="https://github.com/CristianParadaLopez/blogPortafolio" className='border border-[#2a2a2a] py-2 sm:py-3 px-4 sm:px-5 rounded-full transition-all duration-300 hover:bg-[#1a1a1a] hover:text-[#DE3642]'>
-            Repositorio del blog <i className='bx bxl-github '></i>
+        
+        <div className='flex flex-col sm:flex-row gap-5 justify-center items-center'>
+          <a href="#articulos" className="w-full sm:w-auto bg-[#DE3642] text-white py-4 px-10 rounded-full font-bold hover:shadow-[0_0_30px_rgba(222,54,66,0.6)] hover:scale-105 transition-all duration-300">
+            Explorar Artículos
+          </a>
+          <a href="https://github.com..." target="_blank" className='w-full sm:w-auto border border-white/20 py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2'>
+            Ver Repositorio <i className='bx bxl-github text-xl'></i>
           </a>
         </div>
       </div>
