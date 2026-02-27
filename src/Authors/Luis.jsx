@@ -80,7 +80,17 @@ const Luis = () => {
           
           <div className='flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-12'>
           </div>
+          <a 
+        href="https://github.com/luisamaya1518-rgb" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
+        title="Visitar mi GitHub"
+      >
+        <i className='bx bxl-github'></i>
+      </a>
         </div>
+        
 
         {/* Sobre mí */}
         <div className="mt-12 lg:mt-0 lg:w-1/2 max-w-xl">
