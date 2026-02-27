@@ -111,6 +111,15 @@ const mobileSkills = [
         <i className="bx bxs-file-pdf text-xl"></i> 
         <span className="font-medium">Descargar CV</span>
       </a>
+      <a 
+        href="https://github.com/taniagochez" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center text-3xl text-gray-400 hover:text-[#DE3642] transition-all duration-300 hover:scale-110"
+        title="Visitar mi GitHub"
+      >
+        <i className='bx bxl-github'></i>
+      </a>
         </div>
 
         {/* SOBRE MÍ */}
