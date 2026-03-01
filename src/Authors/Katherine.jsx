@@ -110,7 +110,14 @@ const Katherine = () => {
                   <FaMapMarkerAlt className="text-[#DE3642]" />
                   <span>El Salvador</span>
                 </div>
+                
               </div>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+                <a href="/CV/CV_Katherine.pdf" download className='group flex items-center gap-3 bg-[#DE3642] px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(222,54,66,0.3)]'>
+                  <span className="font-black uppercase tracking-widest text-sm">Descargar CV</span>
+                </a>
+                </div>
+                <br />
 
               <div className="flex justify-center lg:justify-start">
                 <div className="flex gap-4">
