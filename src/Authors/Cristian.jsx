@@ -162,7 +162,7 @@ const Cristian = () => {
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <a href="/CV/CV_Cristian_Parada.pdf" download className='group flex items-center gap-3 bg-[#DE3642] px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(222,54,66,0.3)]'>
+                <a href="/CV/CV-Cristian-Parada-Programador.pdf" download className='group flex items-center gap-3 bg-[#DE3642] px-8 py-4 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_30px_rgba(222,54,66,0.3)]'>
                   <span className="font-black uppercase tracking-widest text-sm">Descargar CV</span>
                 </a>
                 <a href="https://cristianparadalopez.github.io/Portafolio/" target="_blank" className='group flex items-center gap-3 bg-white/5 border border-white/10 px-8 py-4 rounded-2xl hover:border-[#DE3642]/50 transition-all duration-300'>
